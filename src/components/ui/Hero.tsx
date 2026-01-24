@@ -14,40 +14,40 @@ export default function Hero() {
           <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-indigo-50/50 rounded-full blur-[100px]" />
         </div>
 
-        <div className="max-w-2xl">
-          <h2 className="text-royal-purple font-bold tracking-wider uppercase mb-6 text-sm md:text-base flex items-center gap-2">
-            <span className="w-8 h-0.5 bg-royal-purple inline-block"></span>
-            Leadership Advisor • Keynote Speaker • AI Strategist
+        <div className="max-w-2xl pt-4 lg:pt-0 pb-24 lg:pb-0">
+          <h2 className="text-royal-purple font-bold tracking-wider uppercase mb-4 lg:mb-6 text-xs md:text-sm lg:text-base flex items-center gap-2">
+            <span className="w-6 md:w-8 h-0.5 bg-royal-purple inline-block"></span>
+            Leadership Advisor • Keynote Speaker
           </h2>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-heading tracking-tight leading-[1.05] mb-8 text-midnight-blue">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold font-heading tracking-tight leading-[1.1] mb-6 lg:mb-8 text-midnight-blue">
             Leadership in the <br />
             <span className="text-royal-purple">Age of AI.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 max-w-lg mb-10 leading-relaxed font-light">
+          <p className="text-base md:text-xl text-gray-600 max-w-lg mb-8 lg:mb-10 leading-relaxed font-light">
             I help executives and L&D teams integrate AI to enhance decision-making and performance—without sacrificing human connection.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-8 lg:mb-16">
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto px-10 py-4 bg-midnight-blue hover:bg-royal-purple text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center text-lg"
+              className="w-full sm:w-auto px-8 py-3.5 md:px-10 md:py-4 bg-midnight-blue hover:bg-royal-purple text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center text-base md:text-lg"
             >
               Book a Discovery Call
             </Link>
             <Link 
-              href="/workshops" 
-              className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-gray-200 hover:border-royal-purple/30 hover:bg-gray-50 text-midnight-blue font-semibold rounded-full transition-all duration-300 text-center text-lg"
+              href="/work-with-me" 
+              className="w-full sm:w-auto px-8 py-3.5 md:px-10 md:py-4 bg-transparent border-2 border-gray-200 hover:border-royal-purple/30 hover:bg-gray-50 text-midnight-blue font-semibold rounded-full transition-all duration-300 text-center text-base md:text-lg"
             >
-              View Workshops
+              View Services
             </Link>
           </div>
         </div>
       </div>
 
       {/* Right Panel: Image (Full Bleed Banner Style) */}
-      <div className="w-full lg:w-1/2 relative min-h-[50vh] lg:min-h-auto order-1 lg:order-2 bg-white pb-16 lg:pb-20">
+      <div className="w-full lg:w-1/2 relative min-h-[40vh] md:min-h-[50vh] lg:min-h-auto order-1 lg:order-2 bg-white lg:pb-20">
          <Image 
             src="/mark-chivere-hero.png" 
             alt="Mark Chivere - Leadership Advisor" 
@@ -64,7 +64,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Banner - Overlays Image */}
-      <div className="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-sm border-t border-gray-100 py-6 lg:py-8 z-20">
+      <div className="hidden md:block absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur-sm border-t border-gray-100 py-6 lg:py-8 z-20">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap">Trusted by leaders at</p>
           <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-4 w-full">

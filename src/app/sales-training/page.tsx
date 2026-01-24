@@ -11,7 +11,7 @@ export default function SalesTraining() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-midnight-blue text-white overflow-hidden">
+      <section className="relative py-16 lg:py-32 bg-midnight-blue text-white overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
           <div className="absolute top-[-10%] right-[-5%] w-[50%] h-[50%] bg-royal-purple/30 rounded-full blur-[100px]" />
@@ -20,16 +20,16 @@ export default function SalesTraining() {
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-4xl">
-            <h1 className="text-sm font-bold tracking-wider text-electric-cyan uppercase mb-4">
+            <h1 className="text-xs md:text-sm font-bold tracking-wider text-electric-cyan uppercase mb-4">
               Sales Training & Consultancy
             </h1>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 md:mb-8 leading-tight">
               PRISM: Selling Through the <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-white">
                 Lens of Value
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-2xl text-gray-300 leading-relaxed max-w-2xl">
               Moving beyond feature/benefit selling to a strategy of value perception, leveraging behavioural science and AI.
             </p>
           </div>
@@ -37,11 +37,11 @@ export default function SalesTraining() {
       </section>
 
       {/* The Philosophy */}
-      <section className="py-20 lg:py-24">
+      <section className="py-16 lg:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
             <div className="lg:w-1/3">
-              <h3 className="text-3xl font-bold font-heading text-midnight-blue mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold font-heading text-midnight-blue mb-4 md:mb-6">
                 The Philosophy: <br />
                 <span className="text-royal-purple">Perception is the New Reality</span>
               </h3>
@@ -59,10 +59,10 @@ export default function SalesTraining() {
       </section>
 
       {/* The PRISM Framework */}
-      <section className="py-20 lg:py-24 bg-gray-50">
+      <section className="py-16 lg:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h3 className="text-2xl md:text-4xl font-bold font-heading text-midnight-blue mb-4 md:mb-6">
               The PRISM Framework
             </h3>
             <p className="text-lg text-gray-600">
@@ -190,10 +190,10 @@ export default function SalesTraining() {
       </section>
 
       {/* The Impact */}
-      <section className="py-20 lg:py-24 bg-midnight-blue text-white">
+      <section className="py-16 lg:py-24 bg-midnight-blue text-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h3 className="text-2xl md:text-4xl font-bold font-heading mb-6">
               The Impact on Your Bottom Line
             </h3>
             <p className="text-lg text-gray-300">

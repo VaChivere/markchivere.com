@@ -2,13 +2,13 @@ import Image from 'next/image';
 
 export default function MeetMark() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
           
           {/* Visual/Image Column */}
           <div className="w-full lg:w-5/12 relative">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-gray-100 relative shadow-2xl shadow-blue-900/10">
+            <div className="aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden bg-gray-100 relative shadow-2xl shadow-blue-900/10">
               <Image
                 src="/mark-chivere-meet.png"
                 alt="Mark Chivere"
@@ -17,10 +17,8 @@ export default function MeetMark() {
                 priority
               />
               
-              {/* Floating Stat Card - Minimalist */}
-              
-              {/* Floating Stat Card - Minimalist */}
-              <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
+              {/* Floating Stat Card - Minimalist (Hidden on Mobile) */}
+              <div className="hidden md:block absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
                 <div className="flex justify-between items-center text-center">
                   <div>
                     <span className="block text-2xl font-bold text-royal-purple">17+</span>
@@ -41,12 +39,12 @@ export default function MeetMark() {
             </div>
             
             {/* Decorative background element */}
-            <div className="absolute -z-10 top-12 -left-12 w-full h-full border border-gray-100 rounded-2xl"></div>
+            <div className="absolute -z-10 top-12 -left-12 w-full h-full border border-gray-100 rounded-2xl hidden md:block"></div>
           </div>
 
           {/* Content Column */}
           <div className="w-full lg:w-7/12 lg:pt-8">
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-midnight-blue mb-8 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold font-heading text-midnight-blue mb-6 md:mb-8 tracking-tight">
               Hi, I'm Mark.
             </h2>
             

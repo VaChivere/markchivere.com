@@ -17,13 +17,13 @@ export default function Impact() {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background decoration - Light */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-50 rounded-full blur-[100px] opacity-60"></div>
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-indigo-50 rounded-full blur-[100px] opacity-60"></div>
       
       <div className="container px-4 md:px-6 mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16 md:mb-24">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-8">
               Impact by the Numbers

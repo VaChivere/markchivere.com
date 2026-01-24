@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export default function Offerings() {
   return (
-    <section className="py-24 bg-white" id="offerings">
+    <section className="py-16 md:py-24 bg-white" id="offerings">
       <div className="container px-4 md:px-6 mx-auto">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-4">
             Services
           </h2>
