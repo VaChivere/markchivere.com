@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import HubSpotForm from "@/components/ui/HubSpotForm";
+import NewsletterForm from "@/components/ui/forms/NewsletterForm";
 
 export const metadata: Metadata = {
   title: "Insights",
