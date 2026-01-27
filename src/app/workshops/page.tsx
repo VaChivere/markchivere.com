@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import WorkshopForm from '@/components/ui/forms/WorkshopForm';
+import { HUBSPOT_CONFIG } from '@/config/hubspot';
 
 export const metadata: Metadata = {
   title: "Executive AI Workshops",
@@ -51,8 +52,8 @@ export default function Workshops() {
               <div className="md:w-1/3 w-full bg-gray-50 rounded-xl p-6 border border-gray-200">
                 <h3 className="font-bold text-midnight-blue mb-4">Inquire About This Workshop</h3>
                 <WorkshopForm 
-                  portalId="YOUR_PORTAL_ID" 
-                  formId="YOUR_WORKSHOP_FORM_ID" 
+                  portalId={HUBSPOT_CONFIG.portalId} 
+                  formId={HUBSPOT_CONFIG.forms.workshop} 
                   workshopName="AI-Augmented Leadership & Strategy"
                 />
               </div>
@@ -90,8 +91,8 @@ export default function Workshops() {
               <div className="md:w-1/3 w-full bg-gray-50 rounded-xl p-6 border border-gray-200">
                 <h3 className="font-bold text-midnight-blue mb-4">Inquire About This Workshop</h3>
                 <WorkshopForm 
-                  portalId="YOUR_PORTAL_ID" 
-                  formId="YOUR_WORKSHOP_FORM_ID" 
+                  portalId={HUBSPOT_CONFIG.portalId} 
+                  formId={HUBSPOT_CONFIG.forms.workshop} 
                   workshopName="High-Performance Team Alignment"
                 />
               </div>

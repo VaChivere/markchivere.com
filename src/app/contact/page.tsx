@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ContactForm from '@/components/ui/forms/ContactForm';
+import { HUBSPOT_CONFIG } from '@/config/hubspot';
 
 export const metadata: Metadata = {
   title: "Contact Mark Chivere",
@@ -66,8 +67,8 @@ export default function Contact() {
           <div className="p-8 md:p-12 bg-white">
             <h2 className="text-2xl font-bold font-heading text-midnight-blue mb-6">Send a Message</h2>
             <ContactForm 
-              portalId="YOUR_PORTAL_ID" 
-              formId="YOUR_FORM_ID" 
+              portalId={HUBSPOT_CONFIG.portalId} 
+              formId={HUBSPOT_CONFIG.forms.contact} 
             />
           </div>
         </div>

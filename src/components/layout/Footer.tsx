@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import NewsletterForm from '@/components/ui/forms/NewsletterForm';
+import { HUBSPOT_CONFIG } from '@/config/hubspot';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -58,8 +59,8 @@ export default function Footer() {
             <div className="bg-white/5 p-6 rounded-lg border border-white/10">
               <h5 className="text-sm font-semibold text-white mb-3">Stay Updated</h5>
               <NewsletterForm 
-                portalId="YOUR_PORTAL_ID" 
-                formId="YOUR_NEWSLETTER_FORM_ID" 
+                portalId={HUBSPOT_CONFIG.portalId} 
+                formId={HUBSPOT_CONFIG.forms.newsletter} 
                 variant="footer"
               />
             </div>
