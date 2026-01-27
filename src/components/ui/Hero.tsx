@@ -18,7 +18,7 @@ export default function Hero() {
           />
         </div>
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/20 to-transparent pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-2/3 bg-gradient-to-r from-gray-50 via-gray-50/20 to-transparent pointer-events-none" />
       </div>
 
       {/* Content Layer */}
