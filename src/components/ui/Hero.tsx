@@ -3,26 +3,26 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow-hidden">
+    <section className="relative w-full min-h-[90vh] flex items-center overflow-hidden bg-gray-50">
       
-      {/* Background Image Layer */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image Layer - Constrained Width to prevent "Zoom" */}
+      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[60%] z-0">
         <Image 
           src="/mark-chivere-hero.png" 
           alt="Mark Chivere - Leadership Advisor" 
           fill 
-          className="object-cover object-[65%_center] lg:object-right" 
+          className="object-cover object-center" 
           priority 
-          sizes="100vw"
+          sizes="(max-width: 1024px) 100vw, 60vw"
         />
-        {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent lg:from-white/90 lg:via-white/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent lg:hidden" />
+        {/* Gradient Overlay: Fades the image's left edge into the section's background color */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-transparent to-transparent lg:via-gray-50/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent lg:hidden" />
       </div>
 
       {/* Content Layer */}
       <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10 pt-20 lg:pt-0">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl lg:w-1/2">
           <h2 className="text-royal-purple font-bold tracking-wider uppercase mb-4 lg:mb-6 text-xs md:text-sm lg:text-base flex items-center gap-2">
             <span className="w-6 md:w-8 h-0.5 bg-royal-purple inline-block"></span>
             Leadership Advisor • Keynote Speaker
@@ -55,12 +55,12 @@ export default function Hero() {
       </div>
 
       {/* Bottom Banner */}
-      <div className="hidden md:block absolute bottom-0 left-0 w-full bg-white/80 backdrop-blur-md border-t border-white/20 py-6 lg:py-8 z-20">
+      <div className="hidden md:block absolute bottom-0 left-0 w-full bg-white/60 backdrop-blur-md border-t border-white/20 py-6 lg:py-8 z-20">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-xs font-bold text-gray-500 uppercase tracking-wider whitespace-nowrap">Trusted by leaders at</p>
+          <p className="text-xs font-bold text-gray-600 uppercase tracking-wider whitespace-nowrap">Trusted by leaders at</p>
           <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-4 w-full">
             {["Microsoft", "Coca-Cola", "Ericsson", "UNICEF"].map((client) => (
-              <div key={client} className="relative h-6 w-24 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <div key={client} className="relative h-6 w-24 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                 <Image
                    src={`https://placehold.co/120x40/transparent/0B1C2D/png?text=${client}`}
                    alt={`${client} logo`}
