@@ -29,10 +29,9 @@ export default function Insights() {
             
             <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-200">
                 <h3 className="font-bold text-midnight-blue mb-4">Stay Ahead</h3>
-                <HubSpotForm 
+                <NewsletterForm 
                   portalId="YOUR_PORTAL_ID" 
                   formId="YOUR_NEWSLETTER_FORM_ID" 
-                  targetId="insights-newsletter" 
                 />
             </div>
         </div>

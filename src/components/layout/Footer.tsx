@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NewsletterForm from '@/components/ui/forms/NewsletterForm';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -56,10 +57,11 @@ export default function Footer() {
             
             <div className="bg-white/5 p-6 rounded-lg border border-white/10">
               <h5 className="text-sm font-semibold text-white mb-3">Stay Updated</h5>
-              <div id="hubspot-newsletter-form">
-                {/* HubSpot form placeholder */}
-                <p className="text-xs text-gray-400">Newsletter signup coming soon.</p>
-              </div>
+              <NewsletterForm 
+                portalId="YOUR_PORTAL_ID" 
+                formId="YOUR_NEWSLETTER_FORM_ID" 
+                variant="footer"
+              />
             </div>
           </div>
         </div>

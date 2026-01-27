@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HubSpotForm from '@/components/ui/HubSpotForm';
+import WorkshopForm from '@/components/ui/forms/WorkshopForm';
 
 export const metadata: Metadata = {
   title: "Executive AI Workshops",
@@ -50,10 +50,10 @@ export default function Workshops() {
               </div>
               <div className="md:w-1/3 w-full bg-gray-50 rounded-xl p-6 border border-gray-200">
                 <h3 className="font-bold text-midnight-blue mb-4">Inquire About This Workshop</h3>
-                <HubSpotForm 
+                <WorkshopForm 
                   portalId="YOUR_PORTAL_ID" 
                   formId="YOUR_WORKSHOP_FORM_ID" 
-                  targetId="workshop-1-form" 
+                  workshopName="AI-Augmented Leadership & Strategy"
                 />
               </div>
             </div>
@@ -89,10 +89,10 @@ export default function Workshops() {
               </div>
               <div className="md:w-1/3 w-full bg-gray-50 rounded-xl p-6 border border-gray-200">
                 <h3 className="font-bold text-midnight-blue mb-4">Inquire About This Workshop</h3>
-                <HubSpotForm 
+                <WorkshopForm 
                   portalId="YOUR_PORTAL_ID" 
                   formId="YOUR_WORKSHOP_FORM_ID" 
-                  targetId="workshop-2-form" 
+                  workshopName="High-Performance Team Alignment"
                 />
               </div>
             </div>
