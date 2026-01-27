@@ -39,7 +39,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-sm md:text-xl text-gray-700 max-w-lg mb-8 lg:mb-12 leading-relaxed font-light font-sans">
-              I help executives and L&D teams integrate AI to enhance decision-making and performance—without sacrificing human connection.
+              I help C-suite executives and L&D teams integrate Generative AI to enhance strategic decision-making and organizational performance—bridging the gap between human intelligence and artificial capability.
             </p>
 
             {/* Buttons */}

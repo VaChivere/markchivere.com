@@ -3,8 +3,8 @@ import WorkshopForm from '@/components/ui/forms/WorkshopForm';
 import { HUBSPOT_CONFIG } from '@/config/hubspot';
 
 export const metadata: Metadata = {
-  title: "Executive AI Workshops",
-  description: "Practical, outcome-focused sessions on AI strategy, team alignment, and productivity.",
+  title: "AI Workshops | Leadership, Strategy & Productivity Training",
+  description: "Outcome-focused AI workshops for executive teams. Learn Generative AI strategy, team alignment, and productivity frameworks.",
 };
 
 export default function Workshops() {
@@ -13,10 +13,10 @@ export default function Workshops() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-midnight-blue mb-6">
-            Executive Workshops
+            Executive AI Workshops & Training
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Practical, outcome-focused sessions designed to help your team navigate the AI era with confidence and clarity.
+            Practical, outcome-focused sessions designed to help your team navigate the AI era with confidence, clarity, and measurable impact.
           </p>
         </div>
 

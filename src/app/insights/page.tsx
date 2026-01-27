@@ -4,8 +4,8 @@ import NewsletterForm from "@/components/ui/forms/NewsletterForm";
 import { HUBSPOT_CONFIG } from '@/config/hubspot';
 
 export const metadata: Metadata = {
-  title: "Insights",
-  description: "Thoughts on the intersection of AI, leadership, and human potential.",
+  title: "Insights | AI Leadership Blog & Newsletter",
+  description: "Deep dives into Generative AI strategy, organizational psychology, and the future of work for senior leaders.",
 };
 
 export default function Insights() {
@@ -13,19 +13,20 @@ export default function Insights() {
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold font-heading text-midnight-blue mb-6">
-          Insights
+          Insights & Perspectives
         </h1>
         <p className="text-xl text-gray-600 mb-12">
-          Perspectives on leading through the AI revolution.
+          Leading through the AI revolution with clarity and human-centric strategy.
         </p>
 
         <div className="bg-off-white rounded-2xl p-12 border border-gray-100">
             <h2 className="text-2xl font-bold font-heading text-midnight-blue mb-4">
-                Content Coming Soon
+                The Future of Leadership Library
             </h2>
             <p className="text-gray-600 mb-8 max-w-lg mx-auto">
                 I'm currently compiling a series of essays and practical guides for leaders. 
-                Join the newsletter to be notified when they publish.
+                Topics will include AI ethics, decision intelligence, and building high-trust hybrid cultures.
+                Join the newsletter to receive them first.
             </p>
             
             <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-200">

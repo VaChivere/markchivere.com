@@ -3,8 +3,8 @@ import ContactForm from '@/components/ui/forms/ContactForm';
 import { HUBSPOT_CONFIG } from '@/config/hubspot';
 
 export const metadata: Metadata = {
-  title: "Contact Mark Chivere",
-  description: "Get in touch for executive coaching, speaking engagements, or workshop inquiries.",
+  title: "Contact Mark Chivere | Book a Discovery Call",
+  description: "Ready to transform your leadership with AI? Get in touch for executive coaching, speaking engagements, or workshop inquiries.",
 };
 
 export default function Contact() {

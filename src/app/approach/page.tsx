@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "My Approach | Human-First AI",
+  title: "My Approach | Human-Centric AI Strategy & Methodology",
   description: "A methodology grounded in behavioral science and human psychology, using AI as an amplifier of judgment, not a replacement.",
 };
 
@@ -11,13 +11,14 @@ export default function Approach() {
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold font-heading text-midnight-blue mb-8">
-          The Human-First Approach
+          The Human-First AI Methodology
         </h1>
         
         <div className="prose prose-lg max-w-none text-gray-700">
           <p className="text-xl leading-relaxed mb-12 text-gray-600">
             Most AI initiatives fail not because of technology, but because they ignore human behavior. 
             My methodology ensures that intelligent systems amplify your best people, rather than alienating them.
+            We combine <strong>organizational psychology</strong> with <strong>generative AI strategy</strong> to create sustainable change.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 not-prose mb-20">
@@ -32,7 +33,7 @@ export default function Approach() {
               <h3 className="text-2xl font-bold text-midnight-blue mb-4">Behavioral Science Grounding</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
                 Technology changes fast; human nature doesn't. My work is rooted in proven frameworks of 
-                motivation, trust-building, and decision science.
+                motivation, trust-building, and decision science to ensure adoption sticks.
               </p>
             </div>
           </div>
@@ -43,21 +44,21 @@ export default function Approach() {
               <span className="text-royal-purple font-light text-3xl opacity-40">01</span>
               <div>
                 <strong className="block text-xl text-midnight-blue mb-2">AI as Amplifier</strong>
-                <span className="text-gray-600 text-lg leading-relaxed">We use AI to remove drudgery and enhance cognitive capacity, allowing leaders to focus on judgment and empathy.</span>
+                <span className="text-gray-600 text-lg leading-relaxed">We use AI to remove drudgery and enhance cognitive capacity, allowing leaders to focus on judgment, empathy, and creative strategy.</span>
               </div>
             </li>
             <li className="flex gap-6 items-start">
               <span className="text-royal-purple font-light text-3xl opacity-40">02</span>
               <div>
                 <strong className="block text-xl text-midnight-blue mb-2">Trust by Design</strong>
-                <span className="text-gray-600 text-lg leading-relaxed">Transparency in how AI is used is non-negotiable. We build protocols that maintain trust within teams.</span>
+                <span className="text-gray-600 text-lg leading-relaxed">Transparency in how AI is used is non-negotiable. We build protocols that maintain trust within teams and ensure ethical AI adoption.</span>
               </div>
             </li>
             <li className="flex gap-6 items-start">
               <span className="text-royal-purple font-light text-3xl opacity-40">03</span>
               <div>
                 <strong className="block text-xl text-midnight-blue mb-2">Outcome Over Tooling</strong>
-                <span className="text-gray-600 text-lg leading-relaxed">We don't chase the latest model. We chase the business result—whether that's speed, quality, or innovation.</span>
+                <span className="text-gray-600 text-lg leading-relaxed">We don't chase the latest model. We chase the business result—whether that's speed, quality, or innovation. We focus on the "why" before the "how".</span>
               </div>
             </li>
           </ul>

@@ -19,25 +19,25 @@ const interTight = Inter_Tight({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mark Chivere | AI-Augmented Human Effectiveness",
+    default: "Mark Chivere | Executive AI Leadership Coaching & Strategy",
     template: "%s | Mark Chivere"
   },
-  description: "Senior authority in AI-augmented human effectiveness. Helping executives and organisations adopt AI in human-first, performance-driven ways.",
-  keywords: ["AI leadership", "executive coaching", "high-performance teams", "AI strategy", "human-centered AI", "Mark Chivere", "corporate training", "digital transformation"],
+  description: "Empowering executives to lead in the age of AI. Expert AI leadership coaching, high-performance team strategy, and human-centric digital transformation.",
+  keywords: ["AI leadership coaching", "executive AI strategy", "human-centric AI", "high-performance teams", "Mark Chivere", "corporate AI training", "future of work", "digital transformation", "generative AI for executives"],
   authors: [{ name: "Mark Chivere" }],
   creator: "Mark Chivere",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://markchivere.com",
-    title: "Mark Chivere | AI-Augmented Human Effectiveness",
-    description: "Senior authority in AI-augmented human effectiveness. Helping executives and organisations adopt AI in human-first, performance-driven ways.",
+    title: "Mark Chivere | Executive AI Leadership Coaching & Strategy",
+    description: "Empowering executives to lead in the age of AI. Expert AI leadership coaching, high-performance team strategy, and human-centric digital transformation.",
     siteName: "Mark Chivere",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mark Chivere | AI-Augmented Human Effectiveness",
-    description: "Senior authority in AI-augmented human effectiveness.",
+    title: "Mark Chivere | Executive AI Leadership Coaching & Strategy",
+    description: "Empowering executives to lead in the age of AI. Expert AI leadership coaching, high-performance team strategy, and human-centric digital transformation.",
   },
   robots: {
     index: true,
