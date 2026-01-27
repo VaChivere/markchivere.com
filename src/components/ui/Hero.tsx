@@ -6,18 +6,20 @@ export default function Hero() {
     <section className="relative w-full min-h-[90vh] flex items-center overflow-hidden bg-gray-50">
       
       {/* Background Image Layer - Constrained Width to prevent "Zoom" */}
-      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[60%] z-0">
-        <Image 
-          src="/mark-chivere-hero.png" 
-          alt="Mark Chivere - Leadership Advisor" 
-          fill 
-          className="object-cover object-center" 
-          priority 
-          sizes="(max-width: 1024px) 100vw, 60vw"
-        />
+      <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[55%] z-0 flex items-end justify-end">
+        <div className="relative w-full h-full lg:h-[90%] lg:mr-12 lg:mt-12">
+          <Image 
+            src="/mark-chivere-hero.png" 
+            alt="Mark Chivere - Leadership Advisor" 
+            fill 
+            className="object-contain object-bottom lg:object-right-bottom" 
+            priority 
+            sizes="(max-width: 1024px) 100vw, 55vw"
+          />
+        </div>
         {/* Gradient Overlay: Fades the image's left edge into the section's background color */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-transparent to-transparent lg:via-gray-50/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent lg:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-transparent to-transparent lg:via-gray-50/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent lg:hidden pointer-events-none" />
       </div>
 
       {/* Content Layer */}
