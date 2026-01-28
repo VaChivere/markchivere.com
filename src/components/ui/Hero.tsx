@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100dvh] flex items-center bg-gray-50">
+    <section className="relative w-full min-h-[100dvh] flex items-start lg:items-center bg-gray-50">
       <div className="container mx-auto px-6 md:px-12 lg:px-24 pt-20 lg:pt-0">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="relative">
@@ -36,7 +36,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="relative h-[60vh] md:h-[70vh] lg:h-[80vh]">
+          <div className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] -mt-24 lg:mt-0">
             <Image 
               src="/mark-chivere-hero.png" 
               alt="Mark Chivere - Leadership Advisor"
