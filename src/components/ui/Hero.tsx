@@ -20,7 +20,7 @@ export default function Hero() {
               <p className="text-sm md:text-xl text-gray-700 max-w-lg mb-8 lg:mb-12 leading-relaxed font-light font-sans">
                 I help C-suite executives and L&D teams integrate Generative AI to enhance strategic decision-making and organizational performance—bridging the gap between human intelligence and artificial capability.
               </p>
-              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <div className="hidden lg:flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <Link 
                   href="/contact" 
                   className="w-full sm:w-auto px-8 py-3.5 md:px-10 md:py-4 bg-midnight-blue hover:bg-royal-purple text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center text-base md:text-lg"
@@ -36,7 +36,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] -mt-24 lg:mt-0">
+          <div className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] lg:mt-0">
             <Image 
               src="/mark-chivere-hero.png" 
               alt="Mark Chivere - Leadership Advisor"
@@ -45,6 +45,21 @@ export default function Hero() {
               priority
               sizes="(min-width:1024px) 50vw, 100vw"
             />
+            {/* Mobile Buttons Overlay */}
+            <div className="absolute bottom-8 left-0 right-0 z-20 flex flex-col items-center gap-4 px-6 lg:hidden">
+              <Link 
+                href="/contact" 
+                className="w-full sm:w-auto px-8 py-3.5 bg-midnight-blue hover:bg-royal-purple text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl text-center text-base"
+              >
+                Book a Discovery Call
+              </Link>
+              <Link 
+                href="/work-with-me" 
+                className="w-full sm:w-auto px-8 py-3.5 bg-white/90 backdrop-blur-sm border-2 border-midnight-blue hover:border-royal-purple hover:bg-white text-midnight-blue font-semibold rounded-full transition-all duration-300 text-center text-base"
+              >
+                View Services
+              </Link>
+            </div>
           </div>
         </div>
       </div>
