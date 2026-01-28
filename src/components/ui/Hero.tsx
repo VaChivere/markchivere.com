@@ -4,8 +4,8 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative w-full min-h-[100dvh] flex items-start lg:items-center bg-gray-50">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 pt-20 lg:pt-0">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 pt-10 lg:pt-0">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           <div className="relative">
             <div className="absolute inset-y-0 -right-10 w-1/2 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent"></div>
             <div className="relative z-10 max-w-2xl">
