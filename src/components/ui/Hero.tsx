@@ -36,7 +36,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] rounded-2xl overflow-hidden border border-gray-200">
+          <div className="relative h-[60vh] md:h-[70vh] lg:h-[80vh]">
             <Image 
               src="/mark-chivere-hero.png" 
               alt="Mark Chivere - Leadership Advisor"
