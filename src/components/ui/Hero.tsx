@@ -17,7 +17,7 @@ export default function Hero() {
         />
         {/* Gradient Overlay for Text Readability - Smooth fade from left */}
         <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/90 to-transparent lg:from-gray-50 lg:via-gray-50/60 lg:to-transparent" />
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-gray-50 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-gray-50 to-transparent lg:hidden" />
         
         {/* Mobile bottom fade for smooth transition */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent lg:hidden" />
