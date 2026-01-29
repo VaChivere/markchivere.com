@@ -14,11 +14,11 @@ export default function Hero() {
                 Leadership Advisor • Keynote Speaker
               </h2>
               <h1 className="text-[2.5rem] leading-[1.1] md:text-6xl lg:text-7xl xl:text-8xl font-bold font-heading tracking-tight mb-4 lg:mb-8 text-midnight-blue">
-                Leadership in the <br />
-                <span className="text-royal-purple">Age of AI.</span>
+                Unlock your team's <br />
+                <span className="text-royal-purple">full potential.</span>
               </h1>
               <p className="text-sm md:text-xl text-gray-700 max-w-lg mb-8 lg:mb-12 leading-relaxed font-light font-sans">
-                I help C-suite executives and L&D teams integrate Generative AI to enhance strategic decision-making and organizational performance—bridging the gap between human intelligence and artificial capability.
+                Proven programs in team performance, leadership development, sales excellence, and AI integration for enterprise organizations.
               </p>
               <div className="hidden lg:flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <Link 
