@@ -2,11 +2,11 @@
 
 :root {
   /* Core Brand Colors - Brighter/Modern Palette */
-  --midnight-blue: #0f172a; /* Slate 900 - Deep Navy/Slate */
-  --royal-purple: #4f46e5; /* Indigo 600 - Vibrant Indigo */
-  --electric-cyan: #0ea5e9; /* Sky 500 - Bright Blue */
-  --off-white: #f8fafc; /* Slate 50 - Cool White */
-  --charcoal: #334155; /* Slate 700 - Soft Dark Gray */
+  --midnight-blue: #0B1C2D; /* Deep Midnight Blue from Brand Guide */
+  --royal-purple: #4B2E83; /* Royal Purple from Brand Guide */
+  --electric-cyan: #2EE6D6; /* Electric Cyan from Brand Guide */
+  --off-white: #F6F7F9; /* Off-White from Brand Guide */
+  --charcoal: #1A1A1A; /* Charcoal from Brand Guide */
 
   /* Semantic Colors */
   --background: #ffffff; /* Pure White default */

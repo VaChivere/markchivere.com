@@ -13,8 +13,7 @@ export default function Footer() {
           <div className="space-y-6">
             <h3 className="text-xl font-bold font-heading text-white">Mark Chivere</h3>
             <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
-              AI-Augmented Leadership Consultant.<br />
-              Bridging human expertise with AI innovation for executive performance.
+              Executive Coach | Team Effectiveness Facilitator | Leadership Development
             </p>
           </div>
 
@@ -22,8 +21,8 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold text-electric-cyan uppercase tracking-wider mb-6">Quick Links</h4>
             <ul className="space-y-4">
-              <li><Link href="/" className="text-sm text-gray-300 hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/work-with-me" className="text-sm text-gray-300 hover:text-white transition-colors">Work With Me</Link></li>
+              <li><Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/services" className="text-sm text-gray-300 hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/approach" className="text-sm text-gray-300 hover:text-white transition-colors">Approach</Link></li>
               <li><Link href="/impact" className="text-sm text-gray-300 hover:text-white transition-colors">Impact</Link></li>
               <li><Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors">Contact</Link></li>

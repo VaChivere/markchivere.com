@@ -4,131 +4,97 @@ export default function Offerings() {
   return (
     <section className="py-16 md:py-24 bg-white" id="offerings">
       <div className="container px-4 md:px-6 mx-auto">
-        <div className="max-w-3xl mb-12 md:mb-16">
+        <div className="max-w-3xl mb-12 md:mb-16 text-center mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-4">
-            Services
+            How Mark Can Help
           </h2>
           <p className="text-lg text-gray-600">
-            Strategic interventions designed for executive impact and organizational resilience.
+            Programs designed for real-world challenges facing corporate leaders and teams.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-12">
-          {/* Offering 1 */}
-          <div className="group flex flex-col h-full border-t border-gray-200 pt-8 hover:border-royal-purple transition-colors duration-300">
-            <h3 className="text-2xl font-bold font-heading text-midnight-blue mb-4 group-hover:text-royal-purple transition-colors">
-              AI-Augmented Leadership
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Service 1: Executive Coaching */}
+          <div className="group flex flex-col p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-royal-purple/30 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold font-heading text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">
+              One-on-One Executive Coaching
             </h3>
-            <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-              Equipping leaders to make faster, higher-quality decisions under complexity while maintaining executive presence and human connection.
+            <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
+              Confidential, results-focused coaching for senior leaders navigating transition, building executive presence, or facing complex strategic decisions.
             </p>
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>Cognitive support systems</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>Situational Leadership II®</span>
-              </div>
-            </div>
-            <Link 
-              href="/workshops" 
-              className="text-royal-purple font-semibold hover:text-midnight-blue inline-flex items-center gap-2 transition-colors"
-            >
-              Explore Leadership
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+            <Link href="/services#coaching" className="inline-flex items-center text-sm font-semibold text-royal-purple hover:text-midnight-blue transition-colors">
+              Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
 
-          {/* Offering 2 */}
-          <div className="group flex flex-col h-full border-t border-gray-200 pt-8 hover:border-royal-purple transition-colors duration-300">
-            <h3 className="text-2xl font-bold font-heading text-midnight-blue mb-4 group-hover:text-royal-purple transition-colors">
-              High-Performance Teams
+          {/* Service 2: Team Effectiveness Programs */}
+          <div className="group flex flex-col p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-royal-purple/30 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold font-heading text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">
+              High-Performing Team Development
             </h3>
-            <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-              Building trust, alignment, and accountability. We reduce friction and enhance collaboration through AI-supported frameworks.
+            <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
+              Transform leadership teams into cohesive, high-trust units using proven methodologies that build psychological safety and accountability.
             </p>
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>AI-enhanced communication</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>DISC & Feedback loops</span>
-              </div>
-            </div>
-            <Link 
-              href="/workshops" 
-              className="text-royal-purple font-semibold hover:text-midnight-blue inline-flex items-center gap-2 transition-colors"
-            >
-              Explore Teams
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+            <Link href="/services#teams" className="inline-flex items-center text-sm font-semibold text-royal-purple hover:text-midnight-blue transition-colors">
+              Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
 
-          {/* Offering 3 */}
-          <div className="group flex flex-col h-full border-t border-gray-200 pt-8 hover:border-royal-purple transition-colors duration-300">
-            <h3 className="text-2xl font-bold font-heading text-midnight-blue mb-4 group-hover:text-royal-purple transition-colors">
-              Productivity Workshops
+          {/* Service 3: Personal Effectiveness Programs */}
+          <div className="group flex flex-col p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-royal-purple/30 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold font-heading text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">
+              Personal Effectiveness & Productivity
             </h3>
-            <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-              Practical, non-technical workshops that translate intent into daily habits, driving immediate productivity gains without burnout.
+            <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
+              Practical strategies for managing time, energy, and focus. Help your people work smarter and build sustainable habits.
             </p>
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>Role-specific use cases</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>Habit formation</span>
-              </div>
-            </div>
-            <Link 
-              href="/workshops" 
-              className="text-royal-purple font-semibold hover:text-midnight-blue inline-flex items-center gap-2 transition-colors"
-            >
-              Explore Workshops
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+            <Link href="/services#productivity" className="inline-flex items-center text-sm font-semibold text-royal-purple hover:text-midnight-blue transition-colors">
+              Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
 
-          {/* Offering 4 */}
-          <div className="group flex flex-col h-full border-t border-gray-200 pt-8 hover:border-royal-purple transition-colors duration-300">
-            <h3 className="text-2xl font-bold font-heading text-midnight-blue mb-4 group-hover:text-royal-purple transition-colors">
-              Sales Training & PRISM
+          {/* Service 4: AI Integration Workshops */}
+          <div className="group flex flex-col p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-royal-purple/30 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold font-heading text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">
+              Practical AI for Leaders and Teams
             </h3>
-            <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-              Selling through the lens of value. A behavioural framework tailored for the modern buying journey.
+            <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
+              No-hype, hands-on workshops showing exactly how to use AI tools for decision support, content creation, and data analysis.
             </p>
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>Value perception</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm font-medium text-gray-500">
-                 <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan"></span>
-                 <span>Modern Buying Journey</span>
-              </div>
-            </div>
-            <Link 
-              href="/sales-training" 
-              className="text-royal-purple font-semibold hover:text-midnight-blue inline-flex items-center gap-2 transition-colors"
-            >
-              Explore PRISM
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+            <Link href="/workshops" className="inline-flex items-center text-sm font-semibold text-royal-purple hover:text-midnight-blue transition-colors">
+              Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
+
+          {/* Service 5: Sales Training (PRISM Framework) */}
+          <div className="group flex flex-col p-8 bg-gray-50 rounded-2xl border border-gray-100 hover:border-royal-purple/30 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold font-heading text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">
+              Value-Based Sales Training
+            </h3>
+            <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
+              Teach sales teams to understand buyer psychology and communicate value effectively using the PRISM framework.
+            </p>
+            <Link href="/sales-training" className="inline-flex items-center text-sm font-semibold text-royal-purple hover:text-midnight-blue transition-colors">
+              Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
+
+          {/* View All / Contact Card */}
+          <div className="group flex flex-col p-8 bg-midnight-blue rounded-2xl border border-midnight-blue hover:shadow-lg transition-all duration-300 justify-center items-center text-center">
+            <h3 className="text-xl font-bold font-heading text-white mb-3">
+              Not sure where to start?
+            </h3>
+            <p className="text-blue-100 mb-6 text-sm">
+              Let's discuss your specific context and design a program that fits your needs.
+            </p>
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-6 py-2 bg-white text-midnight-blue font-semibold rounded-full hover:bg-electric-cyan transition-colors"
+            >
+              Get in Touch
+            </Link>
+          </div>
+
         </div>
       </div>
     </section>

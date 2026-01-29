@@ -19,25 +19,25 @@ const interTight = Inter_Tight({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mark Chivere | Executive AI Leadership Coaching & Strategy",
+    default: "Mark Chivere | Executive Coaching & Team Effectiveness Programs",
     template: "%s | Mark Chivere"
   },
-  description: "Empowering executives to lead in the age of AI. Expert AI leadership coaching, high-performance team strategy, and human-centric digital transformation.",
-  keywords: ["AI leadership coaching", "executive AI strategy", "human-centric AI", "high-performance teams", "Mark Chivere", "corporate AI training", "future of work", "digital transformation", "generative AI for executives"],
+  description: "Empowering leaders and teams through science-backed coaching, workshops, and AI integration strategies. Trusted by global enterprises to drive performance and well-being.",
+  keywords: ["executive coaching", "team effectiveness", "leadership development", "AI integration strategies", "Mark Chivere", "corporate workshops", "science-backed coaching", "high-performance teams"],
   authors: [{ name: "Mark Chivere" }],
   creator: "Mark Chivere",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://markchivere.com",
-    title: "Mark Chivere | Executive AI Leadership Coaching & Strategy",
-    description: "Empowering executives to lead in the age of AI. Expert AI leadership coaching, high-performance team strategy, and human-centric digital transformation.",
+    title: "Mark Chivere | Executive Coaching & Team Effectiveness Programs",
+    description: "Empowering leaders and teams through science-backed coaching, workshops, and AI integration strategies. Trusted by global enterprises to drive performance and well-being.",
     siteName: "Mark Chivere",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mark Chivere | Executive AI Leadership Coaching & Strategy",
-    description: "Empowering executives to lead in the age of AI. Expert AI leadership coaching, high-performance team strategy, and human-centric digital transformation.",
+    title: "Mark Chivere | Executive Coaching & Team Effectiveness Programs",
+    description: "Empowering leaders and teams through science-backed coaching, workshops, and AI integration strategies. Trusted by global enterprises to drive performance and well-being.",
   },
   robots: {
     index: true,

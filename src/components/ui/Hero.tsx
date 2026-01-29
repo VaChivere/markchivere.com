@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[100dvh] flex items-start lg:items-center bg-gray-50">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 pt-10 lg:pt-0">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+    <section className="relative w-full min-h-[100dvh] flex flex-col bg-gray-50">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 pt-10 lg:pt-0 flex-grow flex items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center w-full">
           <div className="relative">
             <div className="absolute inset-y-0 -right-10 w-1/2 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent"></div>
             <div className="relative z-10 max-w-2xl">
@@ -14,24 +14,24 @@ export default function Hero() {
                 Leadership Advisor • Keynote Speaker
               </h2>
               <h1 className="text-[2.5rem] leading-[1.1] md:text-6xl lg:text-7xl xl:text-8xl font-bold font-heading tracking-tight mb-4 lg:mb-8 text-midnight-blue">
-                Unlock your team's <br />
-                <span className="text-royal-purple">full potential.</span>
+                Transforming How <br />
+                <span className="text-royal-purple">Leaders and Teams Perform</span>
               </h1>
               <p className="text-sm md:text-xl text-gray-700 max-w-lg mb-8 lg:mb-12 leading-relaxed font-light font-sans">
-                Proven programs in team performance, leadership development, sales excellence, and AI integration for enterprise organizations.
+                Proven executive coaching, team effectiveness programs, and leadership development for organizations that demand measurable results.
               </p>
               <div className="hidden lg:flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
                 <Link 
                   href="/contact" 
                   className="w-full sm:w-auto px-8 py-3.5 md:px-10 md:py-4 bg-midnight-blue hover:bg-royal-purple text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center text-base md:text-lg"
                 >
-                  Book a Discovery Call
+                  Schedule a Consultation
                 </Link>
                 <Link 
-                  href="/work-with-me" 
+                  href="/services" 
                   className="w-full sm:w-auto px-8 py-3.5 md:px-10 md:py-4 bg-transparent border-2 border-midnight-blue hover:border-royal-purple hover:bg-white/50 text-midnight-blue font-semibold rounded-full transition-all duration-300 text-center text-base md:text-lg"
                 >
-                  View Services
+                  Explore Services
                 </Link>
               </div>
             </div>
@@ -51,28 +51,28 @@ export default function Hero() {
                 href="/contact" 
                 className="w-full sm:w-auto px-8 py-3.5 bg-midnight-blue hover:bg-royal-purple text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl text-center text-base"
               >
-                Book a Discovery Call
+                Schedule a Consultation
               </Link>
               <Link 
-                href="/work-with-me" 
+                href="/services" 
                 className="w-full sm:w-auto px-8 py-3.5 bg-white/90 backdrop-blur-sm border-2 border-midnight-blue hover:border-royal-purple hover:bg-white text-midnight-blue font-semibold rounded-full transition-all duration-300 text-center text-base"
               >
-                View Services
+                Explore Services
               </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Banner - Desktop Only */}
-      <div className="hidden md:block absolute bottom-0 left-0 w-full bg-white/60 backdrop-blur-md border-t border-white/20 py-6 lg:py-8 z-20">
+      {/* Bottom Banner - Trust Indicators */}
+      <div className="w-full bg-midnight-blue py-8 z-30">
         <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-xs font-bold text-gray-600 uppercase tracking-wider whitespace-nowrap">Trusted by leaders at</p>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-4 w-full">
-            {["Microsoft", "Coca-Cola", "Ericsson", "UNICEF"].map((client) => (
-              <div key={client} className="relative h-6 w-24 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap">Trusted by leaders at</p>
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 w-full">
+            {["Microsoft", "Coca-Cola", "Ericsson", "UNICEF", "MTN Group"].map((client) => (
+              <div key={client} className="relative h-6 w-24 opacity-80 hover:opacity-100 transition-all duration-300">
                 <Image
-                   src={`https://placehold.co/120x40/transparent/0B1C2D/png?text=${client}`}
+                   src={`https://placehold.co/120x40/transparent/FFFFFF/png?text=${client}`}
                    alt={`${client} logo`}
                    fill
                    className="object-contain"

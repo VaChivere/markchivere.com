@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function MeetMark() {
   return (
@@ -31,8 +32,8 @@ export default function MeetMark() {
                   </div>
                   <div className="w-px h-8 bg-gray-200"></div>
                   <div>
-                    <span className="block text-2xl font-bold text-midnight-blue">4.3k+</span>
-                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">Impact</span>
+                    <span className="block text-2xl font-bold text-midnight-blue">4,300+</span>
+                    <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">Professionals</span>
                   </div>
                 </div>
               </div>
@@ -45,34 +46,20 @@ export default function MeetMark() {
           {/* Content Column */}
           <div className="w-full lg:w-7/12 lg:pt-8">
             <h2 className="text-3xl md:text-5xl font-bold font-heading text-midnight-blue mb-6 md:mb-8 tracking-tight">
-              Hi, I'm Mark.
+              Meet Mark Chivere
             </h2>
             
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light">
               <p>
-                For nearly two decades, I have focused on one question: <strong className="font-semibold text-royal-purple">how do people and organisations change in ways that actually stick?</strong>
+                For nearly two decades, Mark has partnered with organizations like Microsoft, Ericsson, and UNICEF to unlock the potential of their leaders. His approach combines behavioral science with practical strategies to build trust, improve decision-making, and navigate complex organizational change.
               </p>
               
               <p>
-                My journey in Learning & Development has taken me across industries—from technology to global development—empowering over 4,300 professionals. I've had the privilege of partnering with organizations like Microsoft, Ericsson, and UNICEF to help leaders navigate complexity.
-              </p>
-              
-              <p>
-                Today, we face a new kind of complexity: Artificial Intelligence.
-              </p>
-
-              <div className="pl-6 border-l-2 border-electric-cyan my-8">
-                <p className="text-xl text-midnight-blue font-medium italic">
-                  "I don't see AI as a replacement for human judgment, but as the ultimate amplifier of it."
-                </p>
-              </div>
-              
-              <p>
-                I translate AI through the lens of organisational psychology and leadership. My goal isn't just to teach you "how to prompt"—it's to help you discover where AI meaningfully improves how you lead, decide, and connect.
+                Whether it’s executive coaching or enterprise-wide training, Mark focuses on one question: <strong className="font-semibold text-royal-purple">What will actually work in your environment?</strong>
               </p>
 
               <div className="pt-6">
-                <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 block">Trusted By</span>
+                <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 block">Trusted By Clients Like</span>
                 <div className="flex flex-wrap gap-x-8 gap-y-4 text-gray-400 font-medium">
                   <span>Microsoft</span>
                   <span>Ericsson</span>
@@ -81,10 +68,22 @@ export default function MeetMark() {
                   <span>MTN Group</span>
                 </div>
               </div>
+
+              <div className="pt-8">
+                <Link 
+                  href="/about" 
+                  className="inline-flex items-center text-midnight-blue font-semibold hover:text-royal-purple transition-colors group"
+                >
+                  Read full bio
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
-          
         </div>
+        
       </div>
     </section>
   );

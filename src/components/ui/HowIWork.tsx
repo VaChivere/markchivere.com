@@ -7,10 +7,10 @@ export default function HowIWork() {
           {/* Header Column */}
           <div className="lg:pr-8">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-6">
-              How I Work
+              The Approach
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              I don't deliver generic AI training. My approach is rooted in human behavior, ensuring that technology serves your goals, not the other way around.
+              Every engagement is designed around specific client contexts, not generic best practices.
             </p>
             <div className="h-1 w-20 bg-royal-purple rounded-full"></div>
           </div>
@@ -18,16 +18,16 @@ export default function HowIWork() {
           {/* Points Column 1 */}
           <div className="space-y-10">
             <div className="group">
-              <h3 className="text-xl font-bold text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">Contextual</h3>
+              <h3 className="text-xl font-bold text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">Context-Driven</h3>
               <p className="text-gray-600 leading-relaxed">
-                Every engagement is contextual to your leadership and operating model. No cookie-cutter solutions—only what fits your reality.
+                Mark doesn’t bring cookie-cutter solutions. Every program begins with understanding organizational culture, challenges, and what success looks like.
               </p>
             </div>
             
             <div className="group">
-              <h3 className="text-xl font-bold text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">Science-Grounded</h3>
+              <h3 className="text-xl font-bold text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">Science-Backed</h3>
               <p className="text-gray-600 leading-relaxed">
-                Grounded in human behaviour and decision science. We work with how brains actually function, reducing resistance to change.
+                His work is grounded in organizational psychology, neuroscience, and behavioral change. He uses what actually works, not what sounds good.
               </p>
             </div>
           </div>
@@ -37,14 +37,14 @@ export default function HowIWork() {
             <div className="group">
               <h3 className="text-xl font-bold text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">Outcome-Focused</h3>
               <p className="text-gray-600 leading-relaxed">
-                Focused on measurable performance outcomes. AI is introduced only where it improves clarity, speed, or quality.
+                Everything is measured against real business outcomes: better decisions, stronger collaboration, increased sales, reduced stress, improved retention.
               </p>
             </div>
             
             <div className="group">
-              <h3 className="text-xl font-bold text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">Human-First</h3>
+              <h3 className="text-xl font-bold text-midnight-blue mb-3 group-hover:text-royal-purple transition-colors">Immediately Applicable</h3>
               <p className="text-gray-600 leading-relaxed">
-                Technology is the tool; people are the engine. We prioritize psychological safety and trust in every digital transformation.
+                Theory matters, but only if people can use it. Participants leave with tools, frameworks, and habits they can implement the next day.
               </p>
             </div>
           </div>

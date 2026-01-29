@@ -26,8 +26,8 @@ export default function Header() {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Work With Me', href: '/work-with-me' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
     { name: 'Approach', href: '/approach' },
     { name: 'Impact', href: '/impact' },
     { name: 'Insights', href: '/insights' },
