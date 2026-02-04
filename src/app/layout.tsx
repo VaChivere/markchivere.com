@@ -21,6 +21,7 @@ const interTight = Inter_Tight({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://markchivere.com'),
   title: {
     default: "Mark Chivere | Executive Coaching & Team Effectiveness Programs",
     template: "%s | Mark Chivere"
