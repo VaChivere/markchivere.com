@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -10,6 +11,7 @@ export default function Header() {
 
   // Close menu when route changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMenuOpen(false);
   }, [pathname]);
 
@@ -37,8 +39,29 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMenuOpen ? 'bg-transparent' : 'glass-panel'}`}>
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-        <Link href="/" className={`text-xl font-bold tracking-tight z-50 relative transition-colors duration-300 ${isMenuOpen ? 'text-white' : 'text-midnight-blue'}`}>
-          Mark Chivere
+        <Link href="/" className="z-50 relative self-start">
+          {/* Desktop Logo - Wide */}
+          <div className="hidden md:block">
+            <Image
+              src={isMenuOpen ? "/mark-chivere-logo-white.svg" : "/logo-wide.png"}
+              alt="Mark Chivere"
+              width={480}
+              height={96}
+              className="h-24 w-auto transition-all duration-300"
+              priority
+            />
+          </div>
+          {/* Mobile Logo - Stacked */}
+          <div className="md:hidden">
+            <Image
+              src={isMenuOpen ? "/mark-chivere-logo-white.svg" : "/logo-stacked.png"}
+              alt="Mark Chivere"
+              width={320}
+              height={128}
+              className="h-32 w-auto transition-all duration-300"
+              priority
+            />
+          </div>
         </Link>
         
         {/* Desktop Nav */}

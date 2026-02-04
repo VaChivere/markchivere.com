@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function HowIWork() {
   return (
     <section className="py-24 bg-gray-50/50">
@@ -12,7 +14,12 @@ export default function HowIWork() {
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               Every engagement is designed around specific client contexts, not generic best practices.
             </p>
-            <div className="h-1 w-20 bg-royal-purple rounded-full"></div>
+            <div className="h-1 w-20 bg-royal-purple rounded-full mb-8"></div>
+            
+            <Link href="/approach" className="inline-flex items-center text-royal-purple font-semibold hover:text-midnight-blue transition-colors group">
+              Read full methodology 
+              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
           </div>
 
           {/* Points Column 1 */}

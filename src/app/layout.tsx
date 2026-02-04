@@ -1,8 +1,11 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
+import HubSpotTracking from "@/components/analytics/HubSpotTracking";
+import { HUBSPOT_CONFIG } from "@/config/hubspot";
 import "./globals.css";
 
 const inter = Inter({
@@ -50,6 +53,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: '/favicon-new.png',
+    apple: '/favicon-new.png',
+  },
 };
 
 export default function RootLayout({
@@ -63,11 +70,14 @@ export default function RootLayout({
         className={`${inter.variable} ${interTight.variable} antialiased bg-off-white text-charcoal flex flex-col min-h-screen`}
       >
         <Header />
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-24">
           {children}
         </main>
         <Footer />
         <CookieBanner />
+        <Suspense fallback={null}>
+          <HubSpotTracking portalId={HUBSPOT_CONFIG.portalId} />
+        </Suspense>
       </body>
     </html>
   );

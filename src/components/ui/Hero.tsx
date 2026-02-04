@@ -66,14 +66,22 @@ export default function Hero() {
 
       {/* Bottom Banner - Trust Indicators */}
       <div className="w-full bg-midnight-blue py-8 z-30">
-        <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap">Trusted by leaders at</p>
-          <div className="flex flex-wrap justify-center md:justify-end gap-x-12 gap-y-6 w-full">
-            {["Microsoft", "Coca-Cola", "Ericsson", "UNICEF", "MTN Group"].map((client) => (
-              <div key={client} className="relative h-6 w-24 opacity-80 hover:opacity-100 transition-all duration-300">
+        <div className="container mx-auto px-6 md:px-12 lg:px-24">
+          <div className="flex flex-wrap justify-between items-center w-full gap-y-6">
+            {[
+              { name: "Microsoft", logoUrl: "/microsoft-logo.svg" },
+              { name: "UNICEF", logoUrl: "/unicef-logo.svg" },
+              { name: "MTN Group", logoUrl: "/mtn-logo.svg" },
+              { name: "Caterpillar", logoUrl: "/caterpillar-logo-white.svg" },
+              { name: "Mars Wrigley", logoUrl: "/mars-wrigley-logo-white.svg" },
+              { name: "McDonald's", logoUrl: "/mcdonalds-logo.svg" },
+              { name: "Groupe Lactalis", logoUrl: "/lactalis-logo.svg" },
+              { name: "AkzoNobel", logoUrl: "/akzonobel-logo-white.svg" }
+            ].map((client) => (
+              <div key={client.name} className="relative h-8 w-24 sm:w-28 md:h-10 md:w-32 lg:w-36 opacity-80 hover:opacity-100 transition-all duration-300">
                 <Image
-                   src={`https://placehold.co/120x40/transparent/FFFFFF/png?text=${client}`}
-                   alt={`${client} logo`}
+                   src={client.logoUrl || `https://placehold.co/120x40/transparent/FFFFFF/png?text=${client.name}`}
+                   alt={`${client.name} logo`}
                    fill
                    className="object-contain"
                    sizes="100px"

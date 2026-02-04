@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Sales Training & PRISM Framework",
@@ -51,7 +50,7 @@ export default function SalesTraining() {
                 In the modern marketplace, decisions are rarely made based on objective superiority; instead, they are made on <strong className="text-midnight-blue">perceived value</strong>. To succeed today, sales professionals must understand that different stakeholders see value through different lenses. My work focuses on moving your team beyond traditional feature/benefit selling to a strategy of value perception.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                By leveraging social, digital, and <strong className="text-midnight-blue">behavioural skills</strong>, I help teams connect with prospects in new and existing accounts. This approach is built on the reality of how buyers actually buy today, replacing dated "buying centre" language with modern concepts like the <strong className="text-midnight-blue">Decision Hub</strong> and the <strong className="text-midnight-blue">Advocacy Zone</strong>.
+                By leveraging social, digital, and <strong className="text-midnight-blue">behavioural skills</strong>, I help teams connect with prospects in new and existing accounts. This approach is built on the reality of how buyers actually buy today, replacing dated &quot;buying centre&quot; language with modern concepts like the <strong className="text-midnight-blue">Decision Hub</strong> and the <strong className="text-midnight-blue">Advocacy Zone</strong>.
               </p>
             </div>
           </div>
@@ -89,7 +88,7 @@ export default function SalesTraining() {
               </div>
               <h4 className="text-xl font-bold text-midnight-blue mb-3">Research</h4>
               <p className="text-gray-600">
-                We use <strong>situational intelligence</strong> to understand the customer’s context deeply, identifying who recognises the need first and what "better" truly means to them.
+                We use <strong>situational intelligence</strong> to understand the customer&apos;s context deeply, identifying who recognises the need first and what &quot;better&quot; truly means to them.
               </p>
             </div>
 
@@ -100,7 +99,7 @@ export default function SalesTraining() {
               </div>
               <h4 className="text-xl font-bold text-midnight-blue mb-3">Illuminate</h4>
               <p className="text-gray-600">
-                We demonstrate how value flows across the entire organisation, stimulating demand by bringing insight to a customer’s objectives and the barriers to achieving them.
+                We demonstrate how value flows across the entire organisation, stimulating demand by bringing insight to a customer&apos;s objectives and the barriers to achieving them.
               </p>
             </div>
 
@@ -208,7 +207,7 @@ export default function SalesTraining() {
             </div>
             <div className="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm">
               <h4 className="text-xl font-bold text-electric-cyan mb-3">Conversion & Win Rates</h4>
-              <p className="text-gray-300">Higher success rates against the competition and the "do nothing" status quo.</p>
+              <p className="text-gray-300">Higher success rates against the competition and the &quot;do nothing&quot; status quo.</p>
             </div>
             <div className="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm">
               <h4 className="text-xl font-bold text-electric-cyan mb-3">Deal Velocity</h4>
@@ -216,7 +215,7 @@ export default function SalesTraining() {
             </div>
             <div className="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm">
               <h4 className="text-xl font-bold text-electric-cyan mb-3">Revenue Growth</h4>
-              <p className="text-gray-300">Increased average deal sizes and "share of wallet" across existing accounts through demonstrated <strong>Value Delivery</strong>.</p>
+              <p className="text-gray-300">Increased average deal sizes and &quot;share of wallet&quot; across existing accounts through demonstrated <strong>Value Delivery</strong>.</p>
             </div>
             <div className="bg-white/5 border border-white/10 p-8 rounded-xl backdrop-blur-sm">
               <h4 className="text-xl font-bold text-electric-cyan mb-3">Quota Attainment</h4>

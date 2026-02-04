@@ -54,6 +54,7 @@ export default function WorkshopForm({ portalId, formId, workshopName }: Worksho
         setErrorMessage(result.error || 'Something went wrong. Please try again.');
       }
     } catch (err) {
+      console.error(err);
       setStatus('error');
       setErrorMessage('An unexpected error occurred.');
     }
@@ -67,7 +68,7 @@ export default function WorkshopForm({ portalId, formId, workshopName }: Worksho
     return (
       <div className="bg-green-50 p-6 rounded-xl border border-green-100 text-center animate-fade-in">
         <h3 className="text-xl font-bold text-midnight-blue mb-2">Inquiry Received!</h3>
-        <p className="text-gray-600 mb-4 text-sm">Thanks for your interest in the "{workshopName}" workshop. I'll be in touch with details soon.</p>
+        <p className="text-gray-600 mb-4 text-sm">Thanks for your interest in the &quot;{workshopName}&quot; workshop. I&apos;ll be in touch with details soon.</p>
         <button 
           onClick={() => setStatus('idle')}
           className="text-royal-purple font-semibold hover:text-midnight-blue underline text-sm"

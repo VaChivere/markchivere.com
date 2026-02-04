@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -16,7 +15,7 @@ export default function PrivacyPolicy() {
         
         <h2>1. Introduction</h2>
         <p>
-          Mark Chivere ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website markchivere.com.
+          Mark Chivere (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website markchivere.com.
         </p>
 
         <h2>2. Information We Collect</h2>
@@ -54,7 +53,23 @@ export default function PrivacyPolicy() {
           </li>
         </ul>
 
-        <h2>5. Contact Us</h2>
+        <h2>5. Third-Party Tools and HubSpot Integration</h2>
+        <p>
+          We use HubSpot as our Customer Relationship Management (CRM) platform and for email marketing (newsletters). By submitting forms on this website, you acknowledge that the information you provide (such as your name and email address) will be transferred to HubSpot for processing in accordance with their <a href="https://legal.hubspot.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-royal-purple hover:underline">Privacy Policy</a>.
+        </p>
+        <p>
+          We use HubSpot to:
+        </p>
+        <ul>
+          <li>Manage our contact database and customer relationships.</li>
+          <li>Send newsletters and marketing communications you have subscribed to.</li>
+          <li>Analyze website traffic and user engagement to improve our services.</li>
+        </ul>
+        <p>
+          You can unsubscribe from our marketing communications at any time by clicking the &quot;unsubscribe&quot; link located at the bottom of our emails.
+        </p>
+
+        <h2>6. Contact Us</h2>
         <p>
           If you have questions or comments about this Privacy Policy, please contact us at:
         </p>

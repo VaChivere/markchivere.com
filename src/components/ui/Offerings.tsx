@@ -33,7 +33,7 @@ export default function Offerings() {
               High-Performing Team Development
             </h3>
             <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
-              Transform leadership teams into cohesive, high-trust units using proven methodologies that build psychological safety and accountability.
+              For teams that need to move fast without breaking things. We align strategy, roles, and rules of engagement so you can execute with confidence. Ideal for distributed or hybrid teams facing &apos;collaborative overload&apos;.
             </p>
             <Link href="/services#teams" className="inline-flex items-center text-sm font-semibold text-royal-purple hover:text-midnight-blue transition-colors">
               Learn more <span className="ml-1 transition-transform group-hover:translate-x-1">→</span>
@@ -85,7 +85,7 @@ export default function Offerings() {
               Not sure where to start?
             </h3>
             <p className="text-blue-100 mb-6 text-sm">
-              Let's discuss your specific context and design a program that fits your needs.
+              Let&apos;s discuss your specific context and design a program that fits your needs.
             </p>
             <Link 
               href="/contact" 

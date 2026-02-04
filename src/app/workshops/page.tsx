@@ -32,7 +32,7 @@ export default function Workshops() {
                   For Executive Teams & Senior Leaders
                 </p>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Learn how to integrate AI into your strategic decision-making process without losing the human nuance that defines great leadership. We focus on practical frameworks for "Human + AI" collaboration at the highest level.
+                  Learn how to integrate AI into your strategic decision-making process without losing the human nuance that defines great leadership. We focus on practical frameworks for &quot;Human + AI&quot; collaboration at the highest level.
                 </p>
                 <ul className="space-y-2 mb-8">
                   <li className="flex items-center gap-2 text-gray-700">

@@ -16,7 +16,7 @@ export default function Contact() {
             Get in Touch
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to explore how AI can amplify your leadership and organizational performance? Let's start the conversation.
+            Ready to explore how AI can amplify your leadership and organizational performance? Let&apos;s start the conversation.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export default function Contact() {
             <div>
               <h2 className="text-2xl font-bold font-heading mb-6">Contact Information</h2>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Whether you're looking for executive coaching, team workshops, or a keynote speaker, I'm here to help.
+                Whether you&apos;re looking for executive coaching, team workshops, or a keynote speaker, I&apos;m here to help.
               </p>
               
               <div className="space-y-6">

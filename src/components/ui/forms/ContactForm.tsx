@@ -31,14 +31,6 @@ export default function ContactForm({ portalId, formId }: ContactFormProps) {
     };
 
     try {
-      // If no portalId/formId is provided (placeholder state), simulate success for UI demo
-      if (portalId === 'YOUR_PORTAL_ID' || formId === 'YOUR_FORM_ID') {
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Fake delay
-        setStatus('success');
-        setFormData({ firstname: '', lastname: '', email: '', company: '', message: '' });
-        return;
-      }
-
       const result = await submitHubSpotForm(portalId, formId, fields, context);
 
       if (result.success) {
@@ -49,6 +41,7 @@ export default function ContactForm({ portalId, formId }: ContactFormProps) {
         setErrorMessage(result.error || 'Something went wrong. Please try again.');
       }
     } catch (err) {
+      console.error(err); // Log the error to use the variable
       setStatus('error');
       setErrorMessage('An unexpected error occurred.');
     }
@@ -67,7 +60,7 @@ export default function ContactForm({ portalId, formId }: ContactFormProps) {
           </svg>
         </div>
         <h3 className="text-2xl font-bold text-midnight-blue mb-2">Message Sent!</h3>
-        <p className="text-gray-600 mb-6">Thank you for reaching out. I'll get back to you shortly.</p>
+        <p className="text-gray-600 mb-6">Thank you for reaching out. I&apos;ll get back to you shortly.</p>
         <button 
           onClick={() => setStatus('idle')}
           className="text-royal-purple font-semibold hover:text-midnight-blue underline transition-colors"

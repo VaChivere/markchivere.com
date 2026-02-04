@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
@@ -44,7 +43,7 @@ export default function CookiePolicy() {
 
         <h2>5. More Information</h2>
         <p>
-          Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren't sure whether you need or not it's usually safer to leave cookies enabled in case it does interact with one of the features you use on our site.
+          Hopefully that has clarified things for you and as was previously mentioned if there is something that you aren&apos;t sure whether you need or not it&apos;s usually safer to leave cookies enabled in case it does interact with one of the features you use on our site.
         </p>
         <p>
           However if you are still looking for more information then you can contact us through one of our preferred contact methods:

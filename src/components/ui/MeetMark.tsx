@@ -51,7 +51,7 @@ export default function MeetMark() {
             
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light">
               <p>
-                For nearly two decades, Mark has partnered with organizations like Microsoft, Ericsson, and UNICEF to unlock the potential of their leaders. His approach combines behavioral science with practical strategies to build trust, improve decision-making, and navigate complex organizational change.
+                For nearly two decades, Mark has partnered with organizations like Microsoft, Nissan, and Aspen to unlock the potential of their leaders. His approach combines behavioral science with practical strategies to build trust, improve decision-making, and navigate complex organizational change.
               </p>
               
               <p>
@@ -60,12 +60,23 @@ export default function MeetMark() {
 
               <div className="pt-6">
                 <span className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-4 block">Trusted By Clients Like</span>
-                <div className="flex flex-wrap gap-x-8 gap-y-4 text-gray-400 font-medium">
-                  <span>Microsoft</span>
-                  <span>Ericsson</span>
-                  <span>Coca-Cola</span>
-                  <span>UNICEF</span>
-                  <span>MTN Group</span>
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-6">
+                  {[
+                    { name: "Microsoft", src: "/microsoft-logo.svg" },
+                    { name: "Nissan", src: "/nissan-logo.svg" },
+                    { name: "Aspen", src: "/aspen-logo.svg" },
+                    { name: "WFP", src: "/wfp-logo.svg" },
+                    { name: "MTN Group", src: "/mtn-oval-logo.svg" }
+                  ].map((logo) => (
+                    <div key={logo.name} className="relative h-12 w-32 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                      <Image
+                        src={logo.src}
+                        alt={`${logo.name} logo`}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
 

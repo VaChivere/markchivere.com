@@ -17,9 +17,9 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 text-center relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-royal-purple/20 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-6">Ready to Transform Your Team’s Performance?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-6">Ready to Transform Your Team&apos;s Performance?</h2>
           <p className="mb-10 text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Whether you need executive coaching, team alignment, or AI integration strategies, let’s build a roadmap for your success.
+            Whether you need executive coaching, team alignment, or AI integration strategies, let&apos;s build a roadmap for your success.
           </p>
           <a 
             href="/contact" 

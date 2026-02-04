@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&amp;display=swap');
+    </style>
+  </defs>
+  <text x="50%" y="40" font-family="'Lora', serif" font-weight="500" font-size="34" text-anchor="middle" letter-spacing="1.5" fill="#FFFFFF">Mark Chivere</text>
+</svg>

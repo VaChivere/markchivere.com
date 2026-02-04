@@ -1,6 +1,20 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import { Linkedin } from 'lucide-react';
 import NewsletterForm from '@/components/ui/forms/NewsletterForm';
 import { HUBSPOT_CONFIG } from '@/config/hubspot';
+
+// X (Twitter) Icon Component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    className={className}
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,7 +25,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Column 1: Brand */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold font-heading text-white">Mark Chivere</h3>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/mark-chivere-logo-white.svg"
+                alt="Mark Chivere"
+                width={180}
+                height={36}
+                className="h-8 w-auto"
+              />
+            </Link>
             <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
               Executive Coach | Team Effectiveness Facilitator | Leadership Development
             </p>
@@ -25,6 +47,7 @@ export default function Footer() {
               <li><Link href="/services" className="text-sm text-gray-300 hover:text-white transition-colors">Services</Link></li>
               <li><Link href="/approach" className="text-sm text-gray-300 hover:text-white transition-colors">Approach</Link></li>
               <li><Link href="/impact" className="text-sm text-gray-300 hover:text-white transition-colors">Impact</Link></li>
+              <li><Link href="/events" className="text-sm text-gray-300 hover:text-white transition-colors">Events</Link></li>
               <li><Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -44,14 +67,26 @@ export default function Footer() {
             <h4 className="text-sm font-bold text-electric-cyan uppercase tracking-wider mb-6">Connect</h4>
             <ul className="space-y-4 mb-8">
               <li>
-                <a href="https://linkedin.com/in/markchivere" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-300 hover:text-white transition-colors flex items-center gap-2">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="mailto:mark@markchivere.com" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  mark@markchivere.com
-                </a>
+                <div className="flex items-center gap-4">
+                  <a 
+                    href="https://linkedin.com/in/markchivere" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all duration-300"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a 
+                    href="https://twitter.com/markchivere" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-black hover:border-white/20 transition-all duration-300"
+                    aria-label="X (Twitter)"
+                  >
+                    <XIcon className="w-4 h-4" />
+                  </a>
+                </div>
               </li>
             </ul>
             

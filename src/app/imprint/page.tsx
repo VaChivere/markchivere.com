@@ -19,15 +19,15 @@ export default function Imprint() {
         
         <p>
           Mark Chivere<br />
-          [Street Address]<br />
-          [City, Postal Code]<br />
-          [Country]
+          Shuifknoop 15<br />
+          1319GE Almere<br />
+          Netherlands
         </p>
 
         <p>
           <strong>Contact:</strong><br />
           Email: <a href="mailto:mark@markchivere.com" className="text-royal-purple hover:underline">mark@markchivere.com</a><br />
-          Phone: [Phone Number]
+          Phone: +31 615 633631
         </p>
 
         <p>
@@ -39,7 +39,7 @@ export default function Imprint() {
         <p>
           <strong>Responsible for the content according to &sect; 55 Abs. 2 RStV:</strong><br />
           Mark Chivere<br />
-          [Address same as above]
+          Shuifknoop 15, 1319GE Almere
         </p>
 
         <p>
