@@ -44,8 +44,8 @@ ${blogPosts
   .join('\n')}
 </urlset>`;
 
-  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), sitemap);
-  console.log('✅ Generated public/sitemap.xml');
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap_index.xml'), sitemap);
+  console.log('✅ Generated public/sitemap_index.xml');
 }
 
 function generateRobots() {
@@ -53,7 +53,7 @@ function generateRobots() {
 Allow: /
 Disallow: /imprint
 
-Sitemap: ${BASE_URL}/sitemap.xml
+Sitemap: ${BASE_URL}/sitemap_index.xml
 `;
 
   fs.writeFileSync(path.join(process.cwd(), 'public', 'robots.txt'), robots);
