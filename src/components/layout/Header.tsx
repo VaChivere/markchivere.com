@@ -37,7 +37,7 @@ export default function Header() {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMenuOpen ? 'bg-transparent' : 'glass-panel'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMenuOpen ? 'bg-transparent' : 'bg-white shadow-sm'}`}>
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         <Link href="/" className="z-50 relative">
           {/* Desktop Logo - Wide */}
