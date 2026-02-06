@@ -47,7 +47,7 @@ export default function Header() {
               alt="Mark Chivere"
               width={240}
               height={48}
-              className={`h-8 w-auto transition-all duration-300 ${isMenuOpen ? 'invert grayscale mix-blend-screen brightness-150' : ''}`}
+              className={`h-8 w-auto transition-all duration-300 ${isMenuOpen ? 'brightness-0 invert' : ''}`}
               priority
             />
           </div>
@@ -58,7 +58,7 @@ export default function Header() {
               alt="Mark Chivere"
               width={140}
               height={56}
-              className={`h-10 w-auto transition-all duration-300 ${isMenuOpen ? 'invert grayscale mix-blend-screen brightness-150' : ''}`}
+              className={`h-10 w-auto transition-all duration-300 ${isMenuOpen ? 'brightness-0 invert' : ''}`}
               priority
             />
           </div>
@@ -107,7 +107,7 @@ export default function Header() {
         </button>
 
         {/* Mobile Menu Overlay */}
-        <div className={`fixed inset-0 bg-black z-40 flex flex-col transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4 pointer-events-none'}`}>
+        <div className={`fixed inset-0 bg-midnight-blue z-40 flex flex-col transition-all duration-500 md:hidden ${isMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4 pointer-events-none'}`}>
            <div className="flex flex-col h-full px-6 pt-24 pb-8 overflow-y-auto">
              
              {/* Thematic Headline */}
