@@ -43,22 +43,22 @@ export default function Header() {
           {/* Desktop Logo - Wide */}
           <div className="hidden md:block">
             <Image
-              src={isMenuOpen ? "/mark-chivere-logo-white.svg" : "/logo-wide.png"}
+              src="/logo-wide.png"
               alt="Mark Chivere"
               width={240}
               height={48}
-              className="h-8 w-auto transition-all duration-300"
+              className={`h-8 w-auto transition-all duration-300 ${isMenuOpen ? 'brightness-0 invert' : ''}`}
               priority
             />
           </div>
           {/* Mobile Logo - Stacked */}
           <div className="md:hidden">
             <Image
-              src={isMenuOpen ? "/mark-chivere-logo-white.svg" : "/logo-stacked.png"}
+              src="/logo-stacked.png"
               alt="Mark Chivere"
               width={140}
               height={56}
-              className="h-10 w-auto transition-all duration-300"
+              className={`h-10 w-auto transition-all duration-300 ${isMenuOpen ? 'brightness-0 invert' : ''}`}
               priority
             />
           </div>
