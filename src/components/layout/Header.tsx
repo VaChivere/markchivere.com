@@ -47,7 +47,7 @@ export default function Header() {
               alt="Mark Chivere"
               width={240}
               height={48}
-              className={`h-8 w-auto transition-all duration-300 ${isMenuOpen ? 'brightness-0 invert' : ''}`}
+              className={`h-8 w-auto transition-all duration-300 ${isMenuOpen ? 'invert grayscale mix-blend-screen brightness-150' : ''}`}
               priority
             />
           </div>
@@ -58,7 +58,7 @@ export default function Header() {
               alt="Mark Chivere"
               width={140}
               height={56}
-              className={`h-10 w-auto transition-all duration-300 ${isMenuOpen ? 'brightness-0 invert' : ''}`}
+              className={`h-10 w-auto transition-all duration-300 ${isMenuOpen ? 'invert grayscale mix-blend-screen brightness-150' : ''}`}
               priority
             />
           </div>
