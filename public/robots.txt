@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /imprint
 
-Sitemap: https://markchivere.com/sitemap_index.xml
+Sitemap: https://markchivere.com/sitemap.xml
