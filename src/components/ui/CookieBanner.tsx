@@ -56,11 +56,10 @@ export default function CookieBanner() {
                   <div className="text-4xl filter drop-shadow-md">🍪</div>
                   <div>
                     <h3 className="text-lg font-bold font-heading text-midnight-blue">
-                      Cookies? Sadly, the digital kind.
+                      We Value Your Privacy
                     </h3>
                     <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-                      We use them to make this site smarter, not to feed your midnight cravings. 
-                      Accept them to help us improve, or manage them if you&apos;re on a digital diet.
+                      We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. Your data helps us refine the leadership insights we share.
                     </p>
                   </div>
                 </div>
@@ -70,8 +69,7 @@ export default function CookieBanner() {
                     onClick={handleAcceptAll}
                     className="w-full py-3 px-4 bg-midnight-blue text-white font-semibold rounded-xl hover:bg-royal-purple transition-all shadow-lg hover:shadow-xl active:scale-[0.98] flex items-center justify-center gap-2 group"
                   >
-                    <span>Bring on the Cookies</span>
-                    <span className="group-hover:rotate-12 transition-transform">🚀</span>
+                    <span>Accept All</span>
                   </button>
                   
                   <div className="grid grid-cols-2 gap-3">
@@ -79,20 +77,20 @@ export default function CookieBanner() {
                       onClick={handleRejectNonEssential}
                       className="py-2.5 px-4 bg-gray-50 text-gray-700 font-medium rounded-xl hover:bg-gray-100 border border-gray-200 transition-colors text-sm"
                     >
-                      I&apos;m on a Diet
+                      Essential Only
                     </button>
                     <button 
                       onClick={() => setShowCustomize(true)}
                       className="py-2.5 px-4 bg-transparent text-gray-500 font-medium rounded-xl hover:text-midnight-blue hover:bg-gray-50 transition-colors text-sm"
                     >
-                      Pick & Choose
+                      Customize
                     </button>
                   </div>
                 </div>
                 
                 <div className="mt-4 text-center">
                   <Link href="/privacy" className="text-xs text-gray-400 hover:text-royal-purple underline decoration-dotted">
-                    What&apos;s actually in the jar? (Privacy Policy)
+                    View Privacy Policy
                   </Link>
                 </div>
               </div>
@@ -114,7 +112,7 @@ function CustomizeView({ onSave, onBack }: { onSave: (prefs: { analytics: boolea
     <div className="p-6 bg-gray-50/50">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-bold font-heading text-midnight-blue flex items-center gap-2">
-          <span>⚙️</span> The Ingredients
+          <span>⚙️</span> Cookie Preferences
         </h3>
         <button onClick={onBack} className="text-sm text-gray-500 hover:text-midnight-blue px-2 py-1 hover:bg-gray-100 rounded-lg transition-colors">
           Back
@@ -125,8 +123,8 @@ function CustomizeView({ onSave, onBack }: { onSave: (prefs: { analytics: boolea
         <div className="flex items-start gap-3 p-3 bg-white rounded-xl border border-gray-100 shadow-sm opacity-60 cursor-not-allowed">
           <input type="checkbox" checked disabled className="mt-1 w-4 h-4 text-gray-400 rounded border-gray-300" />
           <div>
-            <div className="font-semibold text-gray-900 text-sm">Essential (The Flour)</div>
-            <div className="text-xs text-gray-500 mt-0.5">Required for the site to function. Non-negotiable, sorry!</div>
+            <div className="font-semibold text-gray-900 text-sm">Strictly Necessary</div>
+            <div className="text-xs text-gray-500 mt-0.5">Required for the website to function properly.</div>
           </div>
         </div>
 
@@ -138,8 +136,8 @@ function CustomizeView({ onSave, onBack }: { onSave: (prefs: { analytics: boolea
             className="mt-1 w-4 h-4 text-royal-purple rounded border-gray-300 focus:ring-royal-purple" 
           />
           <div>
-            <div className="font-semibold text-midnight-blue text-sm">Analytics (The Sugar)</div>
-            <div className="text-xs text-gray-500 mt-0.5">Helps us understand how you use the site so we can make it sweeter.</div>
+            <div className="font-semibold text-midnight-blue text-sm">Performance & Analytics</div>
+            <div className="text-xs text-gray-500 mt-0.5">Helps us understand how you use the site so we can improve it.</div>
           </div>
         </label>
 
@@ -151,8 +149,8 @@ function CustomizeView({ onSave, onBack }: { onSave: (prefs: { analytics: boolea
             className="mt-1 w-4 h-4 text-royal-purple rounded border-gray-300 focus:ring-royal-purple" 
           />
           <div>
-            <div className="font-semibold text-midnight-blue text-sm">Marketing (The Sprinkles)</div>
-            <div className="text-xs text-gray-500 mt-0.5">Allows us to show you relevant content. No spam, promise.</div>
+            <div className="font-semibold text-midnight-blue text-sm">Marketing</div>
+            <div className="text-xs text-gray-500 mt-0.5">Used to deliver content that is relevant to your interests.</div>
           </div>
         </label>
       </div>
