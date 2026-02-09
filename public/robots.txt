@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /imprint
 
 Sitemap: https://markchivere.com/sitemap.xml

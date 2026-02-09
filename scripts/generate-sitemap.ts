@@ -51,7 +51,6 @@ ${blogPosts
 function generateRobots() {
   const robots = `User-agent: *
 Allow: /
-Disallow: /imprint
 
 Sitemap: ${BASE_URL}/sitemap.xml`;
   fs.writeFileSync(path.join(process.cwd(), 'public', 'robots.txt'), robots);
