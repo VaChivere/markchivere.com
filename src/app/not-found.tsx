@@ -164,7 +164,7 @@ export default function NotFound() {
             </g>
 
             {/* --- EMPTY CHAIR (Right) --- */}
-            <g transform="translate(200, 44) scale(0.8)">
+            <g transform="translate(200, 136) scale(0.384)">
                 {/* Chair Legs */}
                 <motion.path 
                   d="M60 220 L70 140 M140 220 L130 140" 

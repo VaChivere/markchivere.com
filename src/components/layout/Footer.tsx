@@ -27,11 +27,11 @@ export default function Footer() {
           <div className="space-y-6">
             <Link href="/" className="inline-block">
               <Image
-                src="/mark-chivere-logo-white.svg"
+                src="/logo-mobile-white.png"
                 alt="Mark Chivere"
-                width={180}
-                height={36}
-                className="h-8 w-auto"
+                width={140}
+                height={56}
+                className="h-10 w-auto"
               />
             </Link>
             <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
