@@ -60,8 +60,11 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // With the menu open the header is opaque navy rather than transparent: it
+  // shares its surface with the panel below, so the masthead and the panel read
+  // as one sheet and nothing can show through at the seam.
   const headerTone = isMenuOpen
-    ? 'bg-transparent border-b border-transparent'
+    ? 'bg-navy border-b border-transparent'
     : isScrolled
       ? 'bg-ivory/95 backdrop-blur-sm border-b border-gray-200'
       : 'bg-ivory/80 backdrop-blur-sm border-b border-transparent';
@@ -158,18 +161,21 @@ export default function Header() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div id="mobile-menu" className="fixed inset-0 z-40 flex flex-col bg-navy md:hidden">
-          <div className="flex h-full flex-col overflow-y-auto px-6 pb-10 pt-28">
-            <div className="mb-12">
-              <h2 className="type-h2 mb-3 text-ivory">
-                The Human Side
-                <br />
-                <em className="font-editorial font-normal italic">of Performance.</em>
-              </h2>
-              <p className="type-body text-slate-light">
-                Leadership, learning and the changing nature of work.
-              </p>
-            </div>
+          {/* The masthead is deliberately outside the scroll container. It holds
+              its position under the logo, so the two stay put as one fixed head
+              while only the links below travel — nothing passes under the logo. */}
+          <div className="shrink-0 px-6 pb-10 pt-28">
+            <h2 className="type-h2 mb-3 text-ivory">
+              The Human Side
+              <br />
+              <em className="font-editorial font-normal italic">of Performance.</em>
+            </h2>
+            <p className="type-body text-slate-light">
+              Leadership, learning and the changing nature of work.
+            </p>
+          </div>
 
+          <div className="flex-1 overflow-y-auto px-6 pb-10">
             <nav className="flex flex-col border-t border-white/10" aria-label="Mobile">
               {NAV_LINKS.map((link) => (
                 <Link
