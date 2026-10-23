@@ -1,3 +1,5 @@
+import type { WritingCategory } from './writing-taxonomy';
+
 export interface BlogPost {
   id: string;
   title: string;
@@ -8,6 +10,10 @@ export interface BlogPost {
   category: "Leadership" | "AI Strategy" | "Team Effectiveness" | "Culture";
   readTime: string;
   imageUrl?: string;
+  /** Editorial taxonomy used by the /writing library. */
+  writingCategory?: WritingCategory;
+  /** Surfaced with the featured treatment in the writing library. */
+  featured?: boolean;
   author: {
     name: string;
     avatar: string;
@@ -24,11 +30,13 @@ export const blogPosts: BlogPost[] = [
     date: "Feb 25, 2026",
     category: "Leadership",
     readTime: "6 min read",
-    imageUrl: "https://placehold.co/800x400/0B1C2D/2EE6D6/png?text=Actually+Doing+It",
+    imageUrl: "/blog/actually-doing-it.svg",
+    writingCategory: "Personal Reflections",
+    featured: true,
     author: {
       name: "Mark Chivere",
       avatar: "/mark-chivere.jpg",
-      role: "Executive Coach"
+      role: "Founder of Treamio"
     },
     content: `
       <p>This is the final post in my series on building real team trust in 2026. <a href="/insights/trust-isnt-built-in-workshops" class="text-royal-purple hover:underline font-semibold">Part 1 covered everyday moments</a>, <a href="/insights/meetings-where-trust-actually-happens" class="text-royal-purple hover:underline font-semibold">Part 2 tackled meetings</a>, and <a href="/insights/difficult-conversations-that-build-trust" class="text-royal-purple hover:underline font-semibold">Part 3 focused on difficult conversations</a>.</p>
@@ -152,11 +160,12 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-18",
     category: "Leadership",
     readTime: "7 min read",
-    imageUrl: "https://placehold.co/800x400/4B2E83/2EE6D6/png?text=Difficult+Conversations",
+    imageUrl: "/blog/difficult-conversations.svg",
+    writingCategory: "Leadership & Behaviour",
     author: {
       name: "Mark Chivere",
       avatar: "/mark-chivere.jpg",
-      role: "Executive Coach"
+      role: "Founder of Treamio"
     },
     content: `
       <p>This is Part 3 in my series on building real team trust in 2026. [Part 1 covered everyday moments,] [Part 2 tackled meetings and communication.]</p>
@@ -256,11 +265,12 @@ export const blogPosts: BlogPost[] = [
     date: "Feb 11, 2026",
     category: "Team Effectiveness",
     readTime: "6 min read",
-    imageUrl: "https://placehold.co/800x400/2EE6D6/0B1C2D/png?text=Trust+Meetings",
+    imageUrl: "/blog/trust-meetings.svg",
+    writingCategory: "Organisations & Performance",
     author: {
       name: "Mark Chivere",
       avatar: "/mark-chivere.jpg",
-      role: "Executive Coach"
+      role: "Founder of Treamio"
     },
     content: `
       <p>This is Part 2 in my series on building real team trust in 2026. [Part 1 covered the everyday moments where trust is built or broken.]</p>
@@ -342,11 +352,12 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-04",
     category: "Team Effectiveness",
     readTime: "5 min read",
-    imageUrl: "https://placehold.co/800x400/4B2E83/FFFFFF/png?text=Trust+Building",
+    imageUrl: "/blog/trust-building.svg",
+    writingCategory: "Learning & Capability",
     author: {
       name: "Mark Chivere",
       avatar: "/mark-chivere.jpg",
-      role: "Executive Coach"
+      role: "Founder of Treamio"
     },
     content: `
       <p>It's early 2026, and I see it all the time: managers investing in trust-building activities—escape rooms, personality assessments, team offsites with carefully designed exercises.</p>
@@ -421,11 +432,12 @@ export const blogPosts: BlogPost[] = [
     date: "Feb 03, 2026",
     category: "Culture",
     readTime: "4 min read",
-    imageUrl: "https://placehold.co/800x400/0B1C2D/FFFFFF/png?text=Culture+Strategy",
+    imageUrl: "/blog/coffee-break.svg",
+    writingCategory: "Organisations & Performance",
     author: {
       name: "Mark Chivere",
       avatar: "/mark-chivere.jpg",
-      role: "Executive Coach"
+      role: "Founder of Treamio"
     },
     content: `
       <p>I was running a strategy workshop for a sales leadership team last month. The agenda was packed: market analysis, SWOT, priority mapping, action plans. Everyone showed up prepared, laptops open, contributing solid points.</p>

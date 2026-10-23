@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import Button from '@/components/ui/Button';
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
@@ -39,57 +40,52 @@ export default function CookieBanner() {
   return (
     <AnimatePresence>
       {showBanner && (
-        <motion.div 
-          initial={{ y: 100, opacity: 0 }}
+        <motion.div
+          initial={{ y: 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-          className="fixed bottom-4 right-4 z-[100] max-w-md w-full p-4"
+          exit={{ y: 24, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed right-4 bottom-4 left-4 z-[100] max-w-md md:left-auto"
         >
-          <div className="bg-white/95 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl overflow-hidden">
+          <div className="rounded-md border border-gray-200 bg-white shadow-[0_24px_60px_-32px_rgba(25,42,56,0.45)]">
             {!showCustomize ? (
-              <div className="p-6 relative">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-electric-cyan/10 rounded-full blur-2xl pointer-events-none" />
-                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-royal-purple/10 rounded-full blur-2xl pointer-events-none" />
-                
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="text-4xl filter drop-shadow-md">🍪</div>
-                  <div>
-                    <h3 className="text-lg font-bold font-heading text-midnight-blue">
-                      We Value Your Privacy
-                    </h3>
-                    <p className="text-gray-600 text-sm mt-2 leading-relaxed">
-                      We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. Your data helps us refine the leadership insights we share.
-                    </p>
+              <div className="p-6">
+                <h2 className="type-h3 mb-3 text-navy">Cookies &amp; Privacy</h2>
+                <p className="type-small mb-6 text-slate">
+                  We use cookies to enhance your browsing experience, analyse site traffic and
+                  personalise content. Your data helps us refine the leadership insights we share.
+                </p>
+
+                <div className="flex flex-col gap-3">
+                  <Button type="button" onClick={handleAcceptAll} className="w-full">
+                    Accept All
+                  </Button>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <Button
+                      type="button"
+                      variant="secondary"
+                      size="sm"
+                      onClick={handleRejectNonEssential}
+                    >
+                      Essential Only
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="quiet"
+                      size="sm"
+                      onClick={() => setShowCustomize(true)}
+                    >
+                      Customise
+                    </Button>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3">
-                  <button 
-                    onClick={handleAcceptAll}
-                    className="w-full py-3 px-4 bg-midnight-blue text-white font-semibold rounded-xl hover:bg-royal-purple transition-all shadow-lg hover:shadow-xl active:scale-[0.98] flex items-center justify-center gap-2 group"
+                <div className="mt-5">
+                  <Link
+                    href="/privacy"
+                    className="type-meta text-slate underline underline-offset-4 transition-colors hover:text-navy"
                   >
-                    <span>Accept All</span>
-                  </button>
-                  
-                  <div className="grid grid-cols-2 gap-3">
-                    <button 
-                      onClick={handleRejectNonEssential}
-                      className="py-2.5 px-4 bg-gray-50 text-gray-700 font-medium rounded-xl hover:bg-gray-100 border border-gray-200 transition-colors text-sm"
-                    >
-                      Essential Only
-                    </button>
-                    <button 
-                      onClick={() => setShowCustomize(true)}
-                      className="py-2.5 px-4 bg-transparent text-gray-500 font-medium rounded-xl hover:text-midnight-blue hover:bg-gray-50 transition-colors text-sm"
-                    >
-                      Customize
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="mt-4 text-center">
-                  <Link href="/privacy" className="text-xs text-gray-400 hover:text-royal-purple underline decoration-dotted">
                     View Privacy Policy
                   </Link>
                 </div>
@@ -108,59 +104,71 @@ function CustomizeView({ onSave, onBack }: { onSave: (prefs: { analytics: boolea
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
 
+  const rowClassName =
+    'flex items-start gap-3 rounded-md border border-gray-200 p-3.5';
+
   return (
-    <div className="p-6 bg-gray-50/50">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-bold font-heading text-midnight-blue flex items-center gap-2">
-          <span>⚙️</span> Cookie Preferences
-        </h3>
-        <button onClick={onBack} className="text-sm text-gray-500 hover:text-midnight-blue px-2 py-1 hover:bg-gray-100 rounded-lg transition-colors">
+    <div className="p-6">
+      <div className="mb-6 flex items-center justify-between">
+        <h2 className="type-h3 text-navy">Cookie Preferences</h2>
+        <button
+          type="button"
+          onClick={onBack}
+          className="type-small text-slate transition-colors hover:text-navy"
+        >
           Back
         </button>
       </div>
 
-      <div className="space-y-4 mb-6">
-        <div className="flex items-start gap-3 p-3 bg-white rounded-xl border border-gray-100 shadow-sm opacity-60 cursor-not-allowed">
-          <input type="checkbox" checked disabled className="mt-1 w-4 h-4 text-gray-400 rounded border-gray-300" />
+      <div className="mb-6 space-y-3">
+        <div className={`${rowClassName} opacity-60`}>
+          <input
+            type="checkbox"
+            checked
+            disabled
+            aria-label="Strictly necessary cookies"
+            className="mt-0.5 h-4 w-4 accent-bronze"
+          />
           <div>
-            <div className="font-semibold text-gray-900 text-sm">Strictly Necessary</div>
-            <div className="text-xs text-gray-500 mt-0.5">Required for the website to function properly.</div>
+            <div className="type-small font-medium text-navy">Strictly Necessary</div>
+            <div className="type-meta mt-0.5 text-slate">Required for the website to function properly.</div>
           </div>
         </div>
 
-        <label className="flex items-start gap-3 p-3 bg-white rounded-xl border border-gray-200 shadow-sm cursor-pointer hover:border-royal-purple/30 transition-colors">
-          <input 
-            type="checkbox" 
-            checked={analytics} 
+        <label className={`${rowClassName} cursor-pointer transition-colors hover:border-bronze`}>
+          <input
+            type="checkbox"
+            checked={analytics}
             onChange={(e) => setAnalytics(e.target.checked)}
-            className="mt-1 w-4 h-4 text-royal-purple rounded border-gray-300 focus:ring-royal-purple" 
+            className="mt-0.5 h-4 w-4 accent-bronze"
           />
           <div>
-            <div className="font-semibold text-midnight-blue text-sm">Performance & Analytics</div>
-            <div className="text-xs text-gray-500 mt-0.5">Helps us understand how you use the site so we can improve it.</div>
+            <div className="type-small font-medium text-navy">Performance &amp; Analytics</div>
+            <div className="type-meta mt-0.5 text-slate">Helps us understand how you use the site so we can improve it.</div>
           </div>
         </label>
 
-        <label className="flex items-start gap-3 p-3 bg-white rounded-xl border border-gray-200 shadow-sm cursor-pointer hover:border-royal-purple/30 transition-colors">
-          <input 
-            type="checkbox" 
-            checked={marketing} 
+        <label className={`${rowClassName} cursor-pointer transition-colors hover:border-bronze`}>
+          <input
+            type="checkbox"
+            checked={marketing}
             onChange={(e) => setMarketing(e.target.checked)}
-            className="mt-1 w-4 h-4 text-royal-purple rounded border-gray-300 focus:ring-royal-purple" 
+            className="mt-0.5 h-4 w-4 accent-bronze"
           />
           <div>
-            <div className="font-semibold text-midnight-blue text-sm">Marketing</div>
-            <div className="text-xs text-gray-500 mt-0.5">Used to deliver content that is relevant to your interests.</div>
+            <div className="type-small font-medium text-navy">Marketing</div>
+            <div className="type-meta mt-0.5 text-slate">Used to deliver content that is relevant to your interests.</div>
           </div>
         </label>
       </div>
 
-      <button 
+      <Button
+        type="button"
         onClick={() => onSave({ analytics, marketing })}
-        className="w-full py-2.5 bg-midnight-blue text-white font-semibold rounded-xl hover:bg-royal-purple transition-colors shadow-md text-sm"
+        className="w-full"
       >
         Save Preferences
-      </button>
+      </Button>
     </div>
   );
 }

@@ -1,0 +1,7 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#0B1C2D"/>
+  <path d="M0 600 L800 400 L800 600 Z" fill="#4B2E83" opacity="0.5"/>
+  <path d="M0 500 L800 300 L800 500 Z" fill="#2EE6D6" opacity="0.1"/>
+  <text x="50%" y="50%" font-family="sans-serif" font-size="48" fill="#F6F7F9" text-anchor="middle" dy=".3em" font-weight="bold">Trust Building</text>
+  <text x="50%" y="60%" font-family="sans-serif" font-size="24" fill="#2EE6D6" text-anchor="middle" dy=".3em">Culture</text>
+</svg>

@@ -1,30 +1,37 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Linkedin } from 'lucide-react';
-import NewsletterForm from '@/components/ui/forms/NewsletterForm';
-import { HUBSPOT_CONFIG } from '@/config/hubspot';
+import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
 
-// X (Twitter) Icon Component
-const XIcon = ({ className }: { className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className={className}
-  >
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Writing', href: '/writing' },
+  { name: 'Speaking', href: '/speaking' },
+  { name: 'My Work', href: '/my-work' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const ventures = [
+  { name: 'Treamio', href: 'https://treamio.com' },
+  { name: 'GrantsHub.eu', href: 'https://grantshub.eu' },
+];
+
+const legal = [
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Cookie Policy', href: '/cookies' },
+  { name: 'Imprint', href: '/imprint' },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-midnight-blue text-off-white pt-20 pb-10">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          {/* Column 1: Brand */}
-          <div className="space-y-6">
+    <footer className="bg-navy text-ivory">
+      <div className="shell py-16 md:py-20">
+        <div className="grid gap-12 md:grid-cols-12 md:gap-10">
+          {/* Brand */}
+          <div className="md:col-span-5">
             <Link href="/" className="inline-block">
               <Image
                 src="/logo-mobile-white.png"
@@ -34,77 +41,81 @@ export default function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
-              Executive Coach | Team Effectiveness Facilitator | Leadership Development
+            <p className="type-meta mt-6 uppercase tracking-[0.14em] text-slate-light">
+              Founder of Treamio | Consultant | Facilitator | Writer
             </p>
+            <p className="type-small mt-5 max-w-sm text-slate-light">
+              Writing and speaking at the intersection of leadership, behavioural science,
+              organisational change and artificial intelligence.
+            </p>
+            <a
+              href="https://linkedin.com/in/markchivere"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 text-slate-light transition-colors hover:border-ivory hover:text-ivory"
+              aria-label="Mark Chivere on LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" aria-hidden="true" />
+            </a>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="text-sm font-bold text-electric-cyan uppercase tracking-wider mb-6">Quick Links</h4>
+          {/* Navigate */}
+          <nav className="md:col-span-3 md:col-start-7" aria-label="Footer">
+            <h2 className="type-eyebrow mb-6 text-slate-light">Navigate</h2>
             <ul className="space-y-4">
-              <li><Link href="/about" className="text-sm text-gray-300 hover:text-white transition-colors">About</Link></li>
-              <li><Link href="/services" className="text-sm text-gray-300 hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="/approach" className="text-sm text-gray-300 hover:text-white transition-colors">Approach</Link></li>
-              <li><Link href="/impact" className="text-sm text-gray-300 hover:text-white transition-colors">Impact</Link></li>
-              <li><Link href="/events" className="text-sm text-gray-300 hover:text-white transition-colors">Events</Link></li>
-              <li><Link href="/contact" className="text-sm text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="type-small text-slate-light transition-colors hover:text-ivory"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Column 3: Legal */}
-          <div>
-            <h4 className="text-sm font-bold text-electric-cyan uppercase tracking-wider mb-6">Legal</h4>
+          {/* Elsewhere */}
+          <div className="md:col-span-3">
+            <h2 className="type-eyebrow mb-6 text-slate-light">Elsewhere</h2>
             <ul className="space-y-4">
-              <li><Link href="/privacy" className="text-sm text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/cookies" className="text-sm text-gray-300 hover:text-white transition-colors">Cookie Policy</Link></li>
-              <li><Link href="/imprint" className="text-sm text-gray-300 hover:text-white transition-colors">Imprint</Link></li>
+              {ventures.map((venture) => (
+                <li key={venture.href}>
+                  <a
+                    href={venture.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="type-small text-slate-light transition-colors hover:text-ivory"
+                  >
+                    {venture.name}
+                  </a>
+                </li>
+              ))}
             </ul>
-          </div>
 
-          {/* Column 4: Connect */}
-          <div>
-            <h4 className="text-sm font-bold text-electric-cyan uppercase tracking-wider mb-6">Connect</h4>
-            <ul className="space-y-4 mb-8">
+            <ul className="mt-8 space-y-4">
+              {legal.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="type-small text-slate-light transition-colors hover:text-ivory"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <div className="flex items-center gap-4">
-                  <a 
-                    href="https://linkedin.com/in/markchivere" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-[#0077b5] hover:border-[#0077b5] transition-all duration-300"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://twitter.com/markchivere" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-black hover:border-white/20 transition-all duration-300"
-                    aria-label="X (Twitter)"
-                  >
-                    <XIcon className="w-4 h-4" />
-                  </a>
-                </div>
+                <CookieSettingsButton />
               </li>
             </ul>
-            
-            <div className="bg-white/5 p-6 rounded-lg border border-white/10">
-              <h5 className="text-sm font-semibold text-white mb-3">Stay Updated</h5>
-              <NewsletterForm 
-                portalId={HUBSPOT_CONFIG.portalId} 
-                formId={HUBSPOT_CONFIG.forms.newsletter} 
-                variant="footer"
-              />
-            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        {/* Bottom bar */}
+        <div className="type-meta mt-16 flex flex-col gap-3 border-t border-white/10 pt-8 text-slate-light md:flex-row md:items-center md:justify-between">
           <p>&copy; {currentYear} Mark Chivere. All rights reserved.</p>
-          <p>Built with purpose.</p>
+          <p>The Human Side of Performance.</p>
         </div>
       </div>
     </footer>

@@ -2,11 +2,15 @@ import fs from 'fs';
 import path from 'path';
 import { blogPosts } from '../src/lib/blog-data';
 
-const BASE_URL = 'https://markchivere.com';
+// The apex domain 301-redirects to www, so only the canonical www URLs are listed.
+const BASE_URL = 'https://www.markchivere.com';
 
 const routes = [
   '',
   '/about',
+  '/writing',
+  '/speaking',
+  '/my-work',
   '/services',
   '/approach',
   '/impact',

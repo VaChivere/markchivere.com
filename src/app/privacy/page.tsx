@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicy() {
   return (
-    <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 max-w-4xl">
-      <h1 className="text-4xl font-bold font-heading text-midnight-blue mb-8">Privacy Policy</h1>
+    <div className="shell-reading pt-12 pb-20 md:pt-16 md:pb-28">
+      <h1 className="type-h1 mb-10 text-navy">Privacy Policy</h1>
       
-      <div className="prose prose-lg max-w-none text-gray-700">
+      <div className="prose-editorial">
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         
         <h2>1. Introduction</h2>
@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
 
         <h2>5. Third-Party Tools and HubSpot Integration</h2>
         <p>
-          We use HubSpot as our Customer Relationship Management (CRM) platform and for email marketing (newsletters). By submitting forms on this website, you acknowledge that the information you provide (such as your name and email address) will be transferred to HubSpot for processing in accordance with their <a href="https://legal.hubspot.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-royal-purple hover:underline">Privacy Policy</a>.
+          We use HubSpot as our Customer Relationship Management (CRM) platform and for email marketing (newsletters). By submitting forms on this website, you acknowledge that the information you provide (such as your name and email address) will be transferred to HubSpot for processing in accordance with their <a href="https://legal.hubspot.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
         </p>
         <p>
           We use HubSpot to:
@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
           If you have questions or comments about this Privacy Policy, please contact us at:
         </p>
         <p>
-          <a href="mailto:mark@markchivere.com" className="text-royal-purple hover:underline">mark@markchivere.com</a>
+          <a href="mailto:mark@markchivere.com">mark@markchivere.com</a>
         </p>
       </div>
     </div>

@@ -1,78 +1,113 @@
-import { Metadata } from "next";
-import ContactForm from '@/components/ui/forms/ContactForm';
-import { HUBSPOT_CONFIG } from '@/config/hubspot';
+import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
+import TrackedLink from "@/components/analytics/TrackedLink";
+import ContactForm from "@/components/ui/forms/ContactForm";
+import { HUBSPOT_CONFIG } from "@/config/hubspot";
+import { absoluteUrl, breadcrumbSchema, DEFAULT_OG_IMAGE, graph } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact Mark Chivere | Book a Discovery Call",
-  description: "Ready to transform your leadership with AI? Get in touch for executive coaching, speaking engagements, or workshop inquiries.",
+  title: "Contact",
+  description:
+    "Get in touch with Mark Chivere about speaking engagements, professional collaboration, media enquiries or general questions.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/contact"),
+    title: "Contact | Mark Chivere",
+    description:
+      "Open to professional conversations, speaking enquiries, collaborations and opportunities to exchange ideas.",
+    images: [{ url: DEFAULT_OG_IMAGE, alt: "Mark Chivere" }],
+  },
 };
 
-export default function Contact() {
+const linkClassName =
+  "group inline-flex items-center gap-2 text-[0.9375rem] font-medium text-navy transition-colors hover:text-bronze-ink";
+
+export default function ContactPage() {
   return (
-    <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-midnight-blue mb-6">
-            Get in Touch
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to explore how AI can amplify your leadership and organizational performance? Let&apos;s start the conversation.
+    <>
+      <JsonLd
+        data={graph([
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ])}
+      />
+
+      {/* Masthead */}
+      <section className="shell pt-12 pb-14 md:pt-16 md:pb-20">
+        <div className="max-w-3xl">
+          <p className="type-eyebrow mb-6 text-bronze-ink">Contact</p>
+          <h1 className="type-h1 mb-6 text-navy">Let&apos;s Connect</h1>
+          <p className="type-lead text-slate">
+            I&apos;m open to professional conversations, speaking enquiries, collaborations and
+            opportunities to exchange ideas.
           </p>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-          {/* Contact Info Side */}
-          <div className="bg-gradient-to-br from-royal-purple to-midnight-blue text-white p-8 md:p-12 flex flex-col justify-between">
-            <div>
-              <h2 className="text-2xl font-bold font-heading mb-6">Contact Information</h2>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Whether you&apos;re looking for executive coaching, team workshops, or a keynote speaker, I&apos;m here to help.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 bg-white/10 rounded-lg">
-                    <svg className="w-6 h-6 text-electric-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">Email</h3>
-                    <a href="mailto:mark@markchivere.com" className="text-gray-300 hover:text-white transition-colors">mark@markchivere.com</a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="p-2 bg-white/10 rounded-lg">
-                    <svg className="w-6 h-6 text-electric-cyan" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white">LinkedIn</h3>
-                    <a href="https://linkedin.com/in/markchivere" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Connect on LinkedIn</a>
-                  </div>
-                </div>
+      {/* Form + details */}
+      <section className="section border-t border-gray-200">
+        <div className="shell">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7">
+              <h2 className="type-h3 mb-6 text-navy">Send a Message</h2>
+              <div className="rounded-md border border-gray-200 bg-white p-8 md:p-10">
+                <ContactForm
+                  portalId={HUBSPOT_CONFIG.portalId}
+                  formId={HUBSPOT_CONFIG.forms.contact}
+                />
               </div>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-white/10">
-              <p className="text-sm text-gray-400">
-                &copy; {new Date().getFullYear()} Mark Chivere. All rights reserved.
-              </p>
+            <div className="space-y-8 lg:col-span-5">
+              <div className="border-t border-gray-300 pt-8">
+                <h2 className="type-eyebrow mb-4 text-bronze-ink">Email</h2>
+                <a
+                  href="mailto:mark@markchivere.com"
+                  className="type-body text-slate transition-colors hover:text-bronze-ink"
+                >
+                  mark@markchivere.com
+                </a>
+              </div>
+
+              <div className="border-t border-gray-300 pt-8">
+                <h2 className="type-eyebrow mb-4 text-bronze-ink">LinkedIn</h2>
+                <a
+                  href="https://linkedin.com/in/markchivere"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="type-body text-slate transition-colors hover:text-bronze-ink"
+                >
+                  Connect on LinkedIn
+                </a>
+              </div>
+
+              <div className="border-t border-gray-300 pt-8">
+                <h2 className="type-eyebrow mb-4 text-bronze-ink">Organisational consulting</h2>
+                <p className="type-body mb-4 text-slate">
+                  Consulting engagements are delivered through Treamio. If your enquiry is about
+                  consulting, you&apos;ll get a faster answer there.
+                </p>
+                <TrackedLink
+                  href="https://treamio.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  event="treamio_referral_click"
+                  eventProperties={{ placement: "contact-sidebar" }}
+                  className={linkClassName}
+                >
+                  Visit Treamio
+                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </TrackedLink>
+              </div>
             </div>
           </div>
-
-          {/* Form Side */}
-          <div className="p-8 md:p-12 bg-white">
-            <h2 className="text-2xl font-bold font-heading text-midnight-blue mb-6">Send a Message</h2>
-            <ContactForm 
-              portalId={HUBSPOT_CONFIG.portalId} 
-              formId={HUBSPOT_CONFIG.forms.contact} 
-            />
-          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

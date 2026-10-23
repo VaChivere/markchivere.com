@@ -5,6 +5,14 @@ import { blogPosts } from "@/lib/blog-data";
 import { Metadata } from "next";
 import ArticleSubscribe from "@/components/blog/ArticleSubscribe";
 import ShareButtons from "@/components/blog/ShareButtons";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  DEFAULT_OG_IMAGE,
+  absoluteUrl,
+  articleSchema,
+  breadcrumbSchema,
+  graph,
+} from "@/lib/seo";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -23,13 +31,24 @@ export async function generateMetadata(props: BlogPostPageProps): Promise<Metada
     };
   }
 
+  const image = post.imageUrl || DEFAULT_OG_IMAGE;
+
   return {
-    title: `${post.title} | Mark Chivere`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/insights/${post.slug}` },
     openGraph: {
+      type: "article",
+      url: absoluteUrl(`/insights/${post.slug}`),
       title: post.title,
       description: post.excerpt,
-      images: [post.imageUrl || ""],
+      images: [{ url: image, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [image],
     },
   };
 }
@@ -43,89 +62,92 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
   }
 
   return (
-    <article className="bg-white min-h-screen pb-24">
-      {/* Hero Header */}
-      <div className="bg-midnight-blue relative text-white pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-midnight-blue/90"></div>
-        
-        <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-4xl text-center">
-          <div className="flex items-center justify-center gap-3 text-sm md:text-base font-medium text-electric-cyan mb-6">
-            <span className="bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm border border-white/10">
-              {post.category}
-            </span>
-            <span>•</span>
+    <article>
+      <JsonLd
+        data={graph([
+          articleSchema(post),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Insights", path: "/insights" },
+            { name: post.title, path: `/insights/${post.slug}` },
+          ]),
+        ])}
+      />
+
+      {/* Masthead */}
+      <header className="shell pt-12 pb-10 md:pt-16 md:pb-14">
+        <div className="max-w-3xl">
+          <Link
+            href="/insights"
+            className="type-meta font-medium text-slate transition-colors hover:text-bronze-ink"
+          >
+            ← All Insights
+          </Link>
+
+          <div className="type-meta mt-8 flex flex-wrap items-center gap-3 text-slate">
+            <span className="text-bronze-ink">{post.category}</span>
+            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gray-300" />
             <span>{post.readTime}</span>
-            <span>•</span>
+            <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gray-300" />
             <span>{post.date}</span>
           </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold font-heading leading-tight mb-8">
-            {post.title}
-          </h1>
 
-          <div className="flex items-center justify-center gap-4">
-             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20">
-               <Image 
-                 src={post.author.avatar} 
-                 alt={post.author.name}
-                 fill
-                 className="object-cover"
-               />
-             </div>
-             <div className="text-left">
-               <p className="font-bold text-white text-lg">{post.author.name}</p>
-               <p className="text-white/60 text-sm">{post.author.role}</p>
-             </div>
+          <h1 className="type-h1 mt-5 mb-8 text-navy">{post.title}</h1>
+
+          <div className="flex items-center gap-3">
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full bg-gray-200">
+              <Image
+                src={post.author.avatar}
+                alt={post.author.name}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="type-small font-medium text-navy">{post.author.name}</p>
+              <p className="type-meta text-slate">{post.author.role}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Content Container */}
-      <div className="container mx-auto px-4 md:px-6 max-w-3xl -mt-12 relative z-20">
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
-           
-           {/* Featured Image (if exists) */}
-           {post.imageUrl && (
-             <div className="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden mb-10">
-               <Image
-                 src={post.imageUrl}
-                 alt={post.title}
-                 fill
-                 className="object-cover"
-               />
-             </div>
-           )}
+      {/* Featured image */}
+      {post.imageUrl && (
+        <div className="shell">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-md bg-gray-200">
+            <Image src={post.imageUrl} alt={post.title} fill className="object-cover" priority />
+          </div>
+        </div>
+      )}
 
-           {/* Article Body */}
-           <div 
-             className="prose prose-lg prose-headings:font-heading prose-headings:text-midnight-blue prose-p:text-gray-600 prose-p:leading-relaxed prose-a:text-royal-purple prose-strong:text-midnight-blue max-w-none"
-             dangerouslySetInnerHTML={{ __html: post.content || `<p>${post.excerpt}</p>` }} 
-           />
+      {/* Body */}
+      <div className="shell-reading pt-12 md:pt-16">
+        <div
+          className="prose-editorial"
+          dangerouslySetInnerHTML={{ __html: post.content || `<p>${post.excerpt}</p>` }}
+        />
 
-           {/* Share Buttons */}
-           <ShareButtons title={post.title} />
+        <ShareButtons title={post.title} />
 
-           {/* Article Footer */}
-           <div className="mt-8 pt-8">
-             <h3 className="text-2xl font-bold font-heading text-midnight-blue mb-4">
-               Enjoyed this perspective?
-             </h3>
-             <p className="text-gray-600 mb-6">
-               Join 4,300+ leaders who receive strategies like this every week. No spam, just signal.
-             </p>
-             <ArticleSubscribe />
-           </div>
+        <div className="mt-4 border-t border-gray-200 pt-10">
+          <h2 className="type-h3 mb-3 text-navy">Enjoyed this perspective?</h2>
+          <p className="type-body mb-6 text-slate">
+            Occasional writing on leadership, behaviour and change — sent when there&apos;s
+            something worth saying. No spam, just signal.
+          </p>
+          <ArticleSubscribe />
         </div>
       </div>
-      
-      {/* Back to Blog */}
-      <div className="text-center mt-12">
-        <Link 
-          href="/insights" 
-          className="inline-flex items-center text-gray-500 hover:text-royal-purple font-semibold transition-colors group"
+
+      {/* Back */}
+      <div className="shell-reading pt-12 pb-20 md:pb-28">
+        <Link
+          href="/insights"
+          className="type-small group inline-flex items-center gap-2 font-medium text-slate transition-colors hover:text-navy"
         >
-          <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span>
+          <span aria-hidden="true" className="transition-transform group-hover:-translate-x-1">
+            ←
+          </span>
           Back to all insights
         </Link>
       </div>

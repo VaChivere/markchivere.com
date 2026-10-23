@@ -1,0 +1,5 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F6F7F9"/>
+  <rect x="0" y="0" width="800" height="600" fill="#0B1C2D" opacity="0.1"/>
+  <text x="50%" y="50%" font-family="sans-serif" font-size="48" fill="#0B1C2D" text-anchor="middle" dy=".3em" font-weight="bold">Insight</text>
+</svg>

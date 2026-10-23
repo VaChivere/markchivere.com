@@ -58,35 +58,35 @@ export default function ShareButtons({ title }: ShareButtonsProps) {
   if (!url) return null; // Avoid hydration mismatch or empty links
 
   return (
-    <div className="flex items-center gap-4 py-6 border-t border-b border-gray-100 my-8">
-      <span className="text-sm font-bold text-midnight-blue uppercase tracking-wider mr-2">
+    <div className="my-10 flex items-center gap-4 border-y border-gray-200 py-5">
+      <span className="type-eyebrow mr-2 text-slate">
         Share
       </span>
       
-      <div className="flex gap-2">
+      <div className="flex gap-1">
         {shareLinks.map((link) => (
           <a
             key={link.name}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`p-2.5 text-gray-400 rounded-full transition-all duration-300 ${link.color}`}
+            className={`rounded-md p-2.5 text-slate transition-colors duration-200 ${link.color}`}
             aria-label={`Share on ${link.name}`}
           >
-            <link.icon className="w-5 h-5" />
+            <link.icon className="h-5 w-5" />
           </a>
         ))}
 
         <button
           onClick={copyToClipboard}
-          className={`p-2.5 rounded-full transition-all duration-300 ${
+          className={`rounded-md p-2.5 transition-colors duration-200 ${
             copied 
-              ? 'text-green-600 bg-green-50' 
-              : 'text-gray-400 hover:text-midnight-blue hover:bg-gray-100'
+              ? 'bg-green-50 text-green-700' 
+              : 'text-slate hover:bg-gray-100 hover:text-navy'
           }`}
           aria-label="Copy link"
         >
-          {copied ? <Check className="w-5 h-5" /> : <Link2 className="w-5 h-5" />}
+          {copied ? <Check className="h-5 w-5" /> : <Link2 className="h-5 w-5" />}
         </button>
       </div>
     </div>

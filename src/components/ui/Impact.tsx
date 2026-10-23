@@ -58,7 +58,7 @@ export default function Impact() {
                  {clients.map((client, index) => (
                   <div key={index} className="relative w-full h-12 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300">
                     <Image
-                      src={client.logoUrl || `https://placehold.co/200x80/transparent/0B1C2D/png?text=${client.name}`}
+                      src={client.logoUrl || '/client-fallback-color.svg'}
                       alt={`${client.name} logo`}
                       fill
                       className="object-contain"

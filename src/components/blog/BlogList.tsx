@@ -63,52 +63,62 @@ export default function BlogList({ posts }: BlogListProps) {
     return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
   };
 
+  const pageButton =
+    'h-10 w-10 rounded-md text-[0.875rem] font-medium transition-colors';
+
   return (
-    <div className="space-y-16">
+    <div className="space-y-14">
       
       {/* Search and Filter Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-gray-100">
+      <div className="flex flex-col justify-between gap-6 pb-8 md:flex-row md:items-end">
         
         {/* Categories */}
-        <div className="flex flex-wrap justify-center md:justify-start gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`relative px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                selectedCategory === cat
-                  ? 'text-white shadow-md shadow-royal-purple/20'
-                  : 'bg-white text-gray-500 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
-              }`}
-            >
-              {selectedCategory === cat && (
-                <motion.div
-                  layoutId="activeCategory"
-                  className="absolute inset-0 bg-midnight-blue rounded-full"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-              <span className="relative z-10">{cat}</span>
-            </button>
-          ))}
+        <div className="flex flex-wrap gap-x-6 gap-y-2">
+          {categories.map((cat) => {
+            const isActive = selectedCategory === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                aria-pressed={isActive}
+                className={`type-small relative pb-2 font-medium transition-colors ${
+                  isActive ? 'text-navy' : 'text-slate hover:text-navy'
+                }`}
+              >
+                {cat}
+                {isActive && (
+                  <motion.span
+                    layoutId="activeCategory"
+                    className="absolute inset-x-0 -bottom-px h-px bg-bronze"
+                    transition={{ duration: 0.25 }}
+                  />
+                )}
+              </button>
+            );
+          })}
         </div>
 
         {/* Search Bar */}
-        <div className="relative w-full md:w-72 group">
+        <div className="relative w-full md:w-72">
+          <label htmlFor="insights-search" className="sr-only">
+            Search insights
+          </label>
           <input
+            id="insights-search"
             type="text"
             placeholder="Search insights..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-royal-purple/20 focus:border-royal-purple transition-all shadow-sm group-hover:shadow-md"
+            className="type-small w-full rounded-md border border-gray-300 bg-white py-2.5 pr-4 pl-9 text-navy outline-none transition-colors placeholder:text-gray-500 focus:border-bronze"
           />
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            strokeWidth={2} 
-            stroke="currentColor" 
-            className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within:text-royal-purple transition-colors"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            aria-hidden="true"
+            className="pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-400"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
@@ -117,21 +127,16 @@ export default function BlogList({ posts }: BlogListProps) {
 
       {/* No Results State */}
       {filteredPosts.length === 0 && (
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center py-20"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="border-t border-gray-200 py-16"
         >
-          <div className="inline-block p-4 bg-gray-50 rounded-full mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-gray-400">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-          </div>
-          <h3 className="text-xl font-bold text-midnight-blue mb-2">No articles found</h3>
-          <p className="text-gray-500">Try adjusting your search or category filter.</p>
-          <button 
+          <h3 className="type-h3 mb-2 text-navy">No articles found</h3>
+          <p className="type-body text-slate">Try adjusting your search or category filter.</p>
+          <button
             onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-            className="mt-6 text-royal-purple font-semibold hover:underline"
+            className="type-small mt-6 font-medium text-navy underline underline-offset-4 transition-colors hover:text-bronze-ink"
           >
             Clear all filters
           </button>
@@ -143,10 +148,10 @@ export default function BlogList({ posts }: BlogListProps) {
         {featuredPost && (
           <motion.div
             key={featuredPost.id + '-featured'}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.35 }}
           >
             <BlogCard post={featuredPost} featured={true} />
           </motion.div>
@@ -154,9 +159,9 @@ export default function BlogList({ posts }: BlogListProps) {
       </AnimatePresence>
 
       {/* Post Grid */}
-      <motion.div 
+      <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
       >
         <AnimatePresence>
           {currentGridPosts.map((post) => (
@@ -167,11 +172,11 @@ export default function BlogList({ posts }: BlogListProps) {
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-4 py-8">
+        <nav aria-label="Pagination" className="flex items-center justify-center gap-4 py-8">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-600 hover:border-royal-purple hover:text-royal-purple disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="type-small rounded-md border border-gray-300 px-4 py-2 font-medium text-slate transition-colors hover:border-navy hover:text-navy disabled:cursor-not-allowed disabled:opacity-40"
           >
             Previous
           </button>
@@ -179,15 +184,16 @@ export default function BlogList({ posts }: BlogListProps) {
           <div className="flex items-center gap-2">
             {getVisiblePages().map((page, index) => (
               page === '...' ? (
-                <span key={`ellipsis-${index}`} className="w-10 h-10 flex items-center justify-center text-gray-400">...</span>
+                <span key={`ellipsis-${index}`} className="type-small flex h-10 w-10 items-center justify-center text-gray-400">…</span>
               ) : (
                 <button
                   key={page}
                   onClick={() => handlePageChange(page as number)}
-                  className={`w-10 h-10 rounded-full text-sm font-bold transition-all ${
+                  aria-current={currentPage === page ? 'page' : undefined}
+                  className={`${pageButton} ${
                     currentPage === page
-                      ? 'bg-midnight-blue text-white shadow-lg shadow-midnight-blue/20'
-                      : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                      ? 'bg-navy text-ivory'
+                      : 'text-slate hover:text-navy'
                   }`}
                 >
                   {page}
@@ -199,44 +205,37 @@ export default function BlogList({ posts }: BlogListProps) {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold text-gray-600 hover:border-royal-purple hover:text-royal-purple disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="type-small rounded-md border border-gray-300 px-4 py-2 font-medium text-slate transition-colors hover:border-navy hover:text-navy disabled:cursor-not-allowed disabled:opacity-40"
           >
             Next
           </button>
-        </div>
+        </nav>
       )}
 
       {/* Newsletter Section */}
       {filteredPosts.length > 3 && (
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative py-16 px-6 bg-midnight-blue rounded-3xl text-center overflow-hidden"
+          transition={{ duration: 0.35 }}
+          className="rounded-md bg-navy px-6 py-14 md:px-12 md:py-16"
         >
-           {/* Background Decoration */}
-           <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-             <div className="absolute -top-24 -left-24 w-64 h-64 bg-royal-purple rounded-full blur-3xl" />
-             <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-electric-cyan rounded-full blur-3xl" />
-           </div>
-
-           <div className="relative z-10 max-w-2xl mx-auto">
-             <h3 className="text-3xl font-bold font-heading text-white mb-4">
-               Insights worth your time
-             </h3>
-             <p className="text-gray-300 mb-8 text-lg">
-              Join 4,300+ leaders receiving weekly strategies on leadership, AI, and organizational change.
+          <div className="max-w-2xl">
+            <h3 className="type-h3 mb-4 text-ivory">Insights worth your time</h3>
+            <p className="type-body mb-8 text-slate-light">
+              Occasional writing on leadership, behaviour and organisational change.
             </p>
-            
-            <div className="max-w-md mx-auto">
-              <NewsletterForm 
-                portalId={HUBSPOT_CONFIG.portalId} 
-                formId={HUBSPOT_CONFIG.forms.newsletter} 
+
+            <div className="max-w-md">
+              <NewsletterForm
+                portalId={HUBSPOT_CONFIG.portalId}
+                formId={HUBSPOT_CONFIG.forms.newsletter}
                 variant="blog-signup"
               />
             </div>
           </div>
-       </motion.div>
+        </motion.div>
       )}
     </div>
   );

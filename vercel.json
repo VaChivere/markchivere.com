@@ -1,6 +1,19 @@
 {
   "framework": "nextjs",
-  "buildCommand": "next build",
+  "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "markchivere.com"
+        }
+      ],
+      "destination": "https://www.markchivere.com/$1",
+      "permanent": true
+    }
+  ]
 }

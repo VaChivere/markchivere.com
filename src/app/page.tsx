@@ -1,34 +1,43 @@
+import type { Metadata } from "next";
 import Hero from "@/components/ui/Hero";
-import MeetMark from "@/components/ui/MeetMark";
-import HowIWork from "@/components/ui/HowIWork";
-import Offerings from "@/components/ui/Offerings";
-import Impact from "@/components/ui/Impact";
+import HeroDivider from "@/components/ui/HeroDivider";
+import Introduction from "@/components/ui/Introduction";
+import FeaturedWriting from "@/components/ui/FeaturedWriting";
+import AreasOfInterest from "@/components/ui/AreasOfInterest";
+import MyWork from "@/components/ui/MyWork";
+import SpeakingInvite from "@/components/ui/SpeakingInvite";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
+import { DEFAULT_OG_IMAGE, absoluteUrl } from "@/lib/seo";
+
+const HOME_TITLE = "Mark Chivere | Leadership, Learning, Behaviour & Change";
+const HOME_DESCRIPTION =
+  "Mark Chivere writes and speaks about leadership, behavioural change, organisational learning, AI adoption and human performance. Founder of Treamio and GrantsHub.eu.";
+
+export const metadata: Metadata = {
+  // Absolute so the layout's "%s | Mark Chivere" template is not appended.
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: absoluteUrl("/"),
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [{ url: DEFAULT_OG_IMAGE, alt: "Mark Chivere" }],
+  },
+};
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Hero />
-      <MeetMark />
-      <HowIWork />
-      <Offerings />
-      <Impact />
-      
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-royal-purple/20 to-transparent"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-midnight-blue mb-6">Ready to Transform Your Team&apos;s Performance?</h2>
-          <p className="mb-10 text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Whether you need executive coaching, team alignment, or AI integration strategies, let&apos;s build a roadmap for your success.
-          </p>
-          <a 
-            href="/contact" 
-            className="inline-flex items-center justify-center px-10 py-5 bg-midnight-blue hover:bg-royal-purple text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
-          >
-            Book a Discovery Call
-          </a>
-        </div>
-      </section>
+      <HeroDivider />
+      <Introduction />
+      <FeaturedWriting />
+      <AreasOfInterest />
+      <MyWork />
+      <SpeakingInvite />
+      <NewsletterSignup />
     </div>
   );
 }

@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 export default function Imprint() {
   return (
-    <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 max-w-4xl">
-      <h1 className="text-4xl font-bold font-heading text-midnight-blue mb-8">Imprint</h1>
+    <div className="shell-reading pt-12 pb-20 md:pt-16 md:pb-28">
+      <h1 className="type-h1 mb-10 text-navy">Imprint</h1>
       
-      <div className="prose prose-lg max-w-none text-gray-700">
+      <div className="prose-editorial">
         <p><strong>Information according to &sect; 5 TMG</strong></p>
         
         <p>
@@ -26,7 +26,7 @@ export default function Imprint() {
 
         <p>
           <strong>Contact:</strong><br />
-          Email: <a href="mailto:mark@markchivere.com" className="text-royal-purple hover:underline">mark@markchivere.com</a><br />
+          Email: <a href="mailto:mark@markchivere.com">mark@markchivere.com</a><br />
           Phone: +31 615 633631
         </p>
 
@@ -44,7 +44,7 @@ export default function Imprint() {
 
         <p>
           <strong>Dispute Resolution</strong><br />
-          The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" className="text-royal-purple hover:underline">https://ec.europa.eu/consumers/odr</a>.<br />
+          The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr</a>.<br />
           We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.
         </p>
       </div>

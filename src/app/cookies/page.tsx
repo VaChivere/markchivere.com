@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 
 export default function CookiePolicy() {
   return (
-    <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 max-w-4xl">
-      <h1 className="text-4xl font-bold font-heading text-midnight-blue mb-8">Cookie Policy</h1>
+    <div className="shell-reading pt-12 pb-20 md:pt-16 md:pb-28">
+      <h1 className="type-h1 mb-10 text-navy">Cookie Policy</h1>
       
-      <div className="prose prose-lg max-w-none text-gray-700">
+      <div className="prose-editorial">
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         
         <h2>1. What Are Cookies</h2>
@@ -49,7 +49,7 @@ export default function CookiePolicy() {
           However if you are still looking for more information then you can contact us through one of our preferred contact methods:
         </p>
         <p>
-          Email: <a href="mailto:mark@markchivere.com" className="text-royal-purple hover:underline">mark@markchivere.com</a>
+          Email: <a href="mailto:mark@markchivere.com">mark@markchivere.com</a>
         </p>
       </div>
     </div>

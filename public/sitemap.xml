@@ -1,103 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://markchivere.com</loc>
-    <lastmod>2026-02-09T13:24:39.918Z</lastmod>
+    <loc>https://www.markchivere.com</loc>
+    <lastmod>2026-10-23T18:01:20.142Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/about</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/about</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/services</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/writing</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/approach</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/speaking</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/impact</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/my-work</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/insights</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/services</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/workshops</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/approach</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/sales-training</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/impact</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/events</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/insights</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/contact</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/workshops</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/privacy</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/sales-training</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/cookies</loc>
-    <lastmod>2026-02-09T13:24:39.919Z</lastmod>
+    <loc>https://www.markchivere.com/events</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/insights/actually-doing-it</loc>
+    <loc>https://www.markchivere.com/contact</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.markchivere.com/privacy</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.markchivere.com/cookies</loc>
+    <lastmod>2026-10-23T18:01:20.143Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.markchivere.com/insights/actually-doing-it</loc>
     <lastmod>2026-02-24T23:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/insights/difficult-conversations-that-build-trust</loc>
+    <loc>https://www.markchivere.com/insights/difficult-conversations-that-build-trust</loc>
     <lastmod>2026-02-18T00:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/insights/meetings-where-trust-actually-happens</loc>
+    <loc>https://www.markchivere.com/insights/meetings-where-trust-actually-happens</loc>
     <lastmod>2026-02-10T23:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/insights/trust-isnt-built-in-workshops</loc>
+    <loc>https://www.markchivere.com/insights/trust-isnt-built-in-workshops</loc>
     <lastmod>2026-02-04T00:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://markchivere.com/insights/coffee-break-strategy</loc>
+    <loc>https://www.markchivere.com/insights/coffee-break-strategy</loc>
     <lastmod>2026-02-02T23:00:00.000Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

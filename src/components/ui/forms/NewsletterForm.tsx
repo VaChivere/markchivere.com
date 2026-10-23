@@ -1,15 +1,28 @@
 'use client';
 
 import { useState } from 'react';
+import Button from '@/components/ui/Button';
 import { submitHubSpotForm } from '@/actions/hubspot';
+import { trackEvent } from '@/lib/analytics';
 
 interface NewsletterFormProps {
   portalId: string;
   formId: string;
   variant?: 'default' | 'footer' | 'blog-signup';
+  ctaLabel?: string;
 }
 
-export default function NewsletterForm({ portalId, formId, variant = 'default' }: NewsletterFormProps) {
+const INPUT_LIGHT =
+  'w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-navy outline-none transition-colors placeholder:text-gray-500 focus:border-bronze';
+const INPUT_DARK =
+  'w-full rounded-md border border-white/25 bg-white/10 px-4 py-3 text-ivory outline-none transition-colors placeholder:text-slate-light focus:border-bronze-light';
+
+export default function NewsletterForm({
+  portalId,
+  formId,
+  variant = 'default',
+  ctaLabel = 'Subscribe',
+}: NewsletterFormProps) {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
@@ -17,6 +30,9 @@ export default function NewsletterForm({ portalId, formId, variant = 'default' }
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+
+  const isDark = variant === 'footer' || variant === 'blog-signup';
+  const inputClass = isDark ? INPUT_DARK : INPUT_LIGHT;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,11 +73,17 @@ export default function NewsletterForm({ portalId, formId, variant = 'default' }
 
   if (status === 'success') {
     return (
-      <div className={`text-center ${variant === 'footer' ? 'p-2' : 'p-6 bg-green-50 rounded-xl border border-green-100'}`}>
-        <p className={`font-bold ${variant === 'footer' || variant === 'blog-signup' ? 'text-white' : 'text-midnight-blue text-lg'} mb-2`}>
-          Welcome aboard!
+      <div
+        className={
+          isDark
+            ? 'text-left'
+            : 'rounded-md border border-gray-200 bg-white p-6 text-left'
+        }
+      >
+        <p className={`type-body mb-1 font-medium ${isDark ? 'text-ivory' : 'text-navy'}`}>
+          Welcome aboard.
         </p>
-        <p className={`${variant === 'footer' || variant === 'blog-signup' ? 'text-gray-400 text-xs' : 'text-gray-600'}`}>
+        <p className={`type-small ${isDark ? 'text-slate-light' : 'text-slate'}`}>
           You&apos;ve successfully subscribed to the newsletter.
         </p>
       </div>
@@ -71,9 +93,11 @@ export default function NewsletterForm({ portalId, formId, variant = 'default' }
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className="flex flex-col gap-3">
-        <div className={`flex flex-col gap-3 ${variant === 'footer' ? '' : 'sm:flex-row'}`}>
+        <div className="flex flex-col gap-3 sm:flex-row">
           <div className="flex-grow">
-            <label htmlFor="newsletter-firstname" className="sr-only">First Name</label>
+            <label htmlFor="newsletter-firstname" className="sr-only">
+              First name
+            </label>
             <input
               type="text"
               id="newsletter-firstname"
@@ -81,16 +105,14 @@ export default function NewsletterForm({ portalId, formId, variant = 'default' }
               required
               value={formData.firstname}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-lg border outline-none transition-all
-                ${variant === 'footer' || variant === 'blog-signup'
-                  ? 'bg-white/10 border-white/20 text-white placeholder-gray-400 focus:bg-white/20 focus:border-electric-cyan' 
-                  : 'bg-white border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20'
-                }`}
-              placeholder="First Name"
+              className={inputClass}
+              placeholder="First name"
             />
           </div>
           <div className="flex-grow">
-            <label htmlFor="newsletter-lastname" className="sr-only">Last Name</label>
+            <label htmlFor="newsletter-lastname" className="sr-only">
+              Last name
+            </label>
             <input
               type="text"
               id="newsletter-lastname"
@@ -98,18 +120,16 @@ export default function NewsletterForm({ portalId, formId, variant = 'default' }
               required
               value={formData.lastname}
               onChange={handleChange}
-              className={`w-full px-4 py-3 rounded-lg border outline-none transition-all
-                ${variant === 'footer' || variant === 'blog-signup'
-                  ? 'bg-white/10 border-white/20 text-white placeholder-gray-400 focus:bg-white/20 focus:border-electric-cyan' 
-                  : 'bg-white border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20'
-                }`}
-              placeholder="Last Name"
+              className={inputClass}
+              placeholder="Last name"
             />
           </div>
         </div>
 
         <div className="flex-grow">
-          <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+          <label htmlFor="newsletter-email" className="sr-only">
+            Email address
+          </label>
           <input
             type="email"
             id="newsletter-email"
@@ -117,33 +137,29 @@ export default function NewsletterForm({ portalId, formId, variant = 'default' }
             required
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-4 py-3 rounded-lg border outline-none transition-all
-              ${variant === 'footer' || variant === 'blog-signup'
-                ? 'bg-white/10 border-white/20 text-white placeholder-gray-400 focus:bg-white/20 focus:border-electric-cyan' 
-                : 'bg-white border-gray-300 focus:border-royal-purple focus:ring-2 focus:ring-royal-purple/20'
-              }`}
-            placeholder="Enter your email"
+            className={inputClass}
+            placeholder="Email address"
           />
         </div>
 
-        <button
+        <Button
           type="submit"
+          variant={isDark ? 'inverse' : 'primary'}
           disabled={status === 'submitting'}
-          className={`w-full px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed
-            ${variant === 'footer' || variant === 'blog-signup'
-              ? 'bg-electric-cyan text-midnight-blue hover:bg-white'
-              : 'bg-midnight-blue text-white hover:bg-royal-purple'
-            }`}
+          onClick={() => trackEvent('newsletter_cta_click', { variant })}
+          className="w-full"
         >
-          {status === 'submitting' ? '...' : 'Subscribe'}
-        </button>
+          {status === 'submitting' ? 'Submitting…' : ctaLabel}
+        </Button>
       </div>
-      
+
       {status === 'error' && (
-        <p className="mt-2 text-xs text-red-500">{errorMessage}</p>
+        <p className={`type-small mt-2 ${isDark ? 'text-red-300' : 'text-red-600'}`}>
+          {errorMessage}
+        </p>
       )}
-      
-      <p className={`mt-3 text-xs ${variant === 'footer' || variant === 'blog-signup' ? 'text-gray-500' : 'text-gray-400'}`}>
+
+      <p className={`type-small mt-3 ${isDark ? 'text-slate-light' : 'text-slate'}`}>
         No spam. Unsubscribe anytime.
       </p>
     </form>

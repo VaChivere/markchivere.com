@@ -21,10 +21,10 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-midnight-blue flex flex-col items-center justify-center relative overflow-hidden font-sans text-off-white selection:bg-electric-cyan selection:text-midnight-blue">
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-navy text-ivory">
       
       {/* Ambient Room Lighting */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
       
       {/* Spotlight Effect */}
       <motion.div 
@@ -72,7 +72,7 @@ export default function NotFound() {
                 {/* Back Leg */}
                 <motion.path 
                   d="M50 80 L20 220" 
-                  stroke="#F6F7F9" 
+                  stroke="#F7F5F0" 
                   strokeWidth="3" 
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
@@ -82,7 +82,7 @@ export default function NotFound() {
                 {/* Front Left Leg */}
                 <motion.path 
                   d="M50 80 L40 220" 
-                  stroke="#F6F7F9" 
+                  stroke="#F7F5F0" 
                   strokeWidth="3" 
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
@@ -92,7 +92,7 @@ export default function NotFound() {
                 {/* Front Right Leg */}
                 <motion.path 
                   d="M90 80 L120 220" 
-                  stroke="#F6F7F9" 
+                  stroke="#F7F5F0" 
                   strokeWidth="3" 
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
@@ -102,9 +102,9 @@ export default function NotFound() {
                 {/* Chart Board */}
                 <motion.rect 
                   x="30" y="40" width="80" height="110" rx="2"
-                  fill="#F6F7F9"
+                  fill="#F7F5F0"
                   fillOpacity="0.05"
-                  stroke="#F6F7F9" 
+                  stroke="#F7F5F0" 
                   strokeWidth="3"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -113,7 +113,7 @@ export default function NotFound() {
                 {/* Paper on Chart */}
                 <motion.rect 
                   x="35" y="45" width="70" height="100" rx="1"
-                  fill="#F6F7F9"
+                  fill="#F7F5F0"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 0.9 }}
                   transition={{ duration: 1, delay: 0.8 }}
@@ -121,7 +121,7 @@ export default function NotFound() {
                 {/* Chart Top Bar */}
                 <motion.path 
                   d="M30 40 L110 40" 
-                  stroke="#4B2E83" 
+                  stroke="#7A6547" 
                   strokeWidth="6" 
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
@@ -131,7 +131,7 @@ export default function NotFound() {
                 {/* Scribble on Paper */}
                 <motion.path 
                   d="M45 80 Q60 60 70 80 T95 80" 
-                  stroke="#0B1C2D" 
+                  stroke="#192A38" 
                   strokeWidth="2" 
                   strokeLinecap="round"
                   fill="none"
@@ -141,7 +141,7 @@ export default function NotFound() {
                 />
                 <motion.path 
                   d="M45 100 L85 100" 
-                  stroke="#0B1C2D" 
+                  stroke="#192A38" 
                   strokeWidth="2" 
                   strokeLinecap="round"
                   strokeDasharray="4 4"
@@ -168,7 +168,7 @@ export default function NotFound() {
                 {/* Chair Legs */}
                 <motion.path 
                   d="M60 220 L70 140 M140 220 L130 140" 
-                  stroke="#F6F7F9" 
+                  stroke="#F7F5F0" 
                   strokeWidth="4" 
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
@@ -178,7 +178,7 @@ export default function NotFound() {
                 {/* Chair Base */}
                 <motion.path 
                   d="M70 140 L130 140" 
-                  stroke="#F6F7F9" 
+                  stroke="#F7F5F0" 
                   strokeWidth="4"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
@@ -187,9 +187,9 @@ export default function NotFound() {
                 {/* Chair Seat */}
                 <motion.path 
                   d="M50 140 C50 140 50 130 150 130 C150 130 150 140 50 140 Z" 
-                  fill="#2EE6D6" 
+                  fill="#C9B48C" 
                   fillOpacity="0.1"
-                  stroke="#2EE6D6" 
+                  stroke="#C9B48C" 
                   strokeWidth="2"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -198,7 +198,7 @@ export default function NotFound() {
                 {/* Chair Back */}
                 <motion.path 
                   d="M60 130 L60 60 C60 40 140 40 140 60 L140 130" 
-                  stroke="#F6F7F9" 
+                  stroke="#F7F5F0" 
                   strokeWidth="4" 
                   strokeLinecap="round"
                   initial={{ pathLength: 0 }}
@@ -227,11 +227,11 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.5 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold font-heading mb-6 tracking-tight text-white">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-royal-purple">404.</span> Session Ended.
+          <h1 className="mb-6 font-heading text-5xl font-semibold tracking-tight text-white md:text-7xl">
+            <span className="text-bronze-light">404.</span> Session Ended.
           </h1>
           
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="mx-auto mb-12 max-w-2xl text-xl leading-relaxed text-slate-light">
             Looks like you&apos;re a bit late—the room is empty and I&apos;ve already packed up. 
             But don&apos;t worry, the insights are still available elsewhere.
           </p>
@@ -239,41 +239,41 @@ export default function NotFound() {
 
         {/* Navigation Options */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto"
+          className="mx-auto grid max-w-4xl grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.8 }}
         >
-          <Link href="/" className="group p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-electric-cyan/50 transition-all duration-300 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-midnight-blue border border-white/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-electric-cyan transition-all">
-              <Home className="w-6 h-6 text-electric-cyan" />
+          <Link href="/" className="group flex flex-col items-center rounded-md border border-white/10 bg-white/5 p-6 text-center transition-colors duration-300 hover:border-bronze-light/50 hover:bg-white/10">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-navy-soft transition-colors group-hover:border-bronze-light">
+              <Home className="h-6 w-6 text-bronze-light" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Back to Lobby</h3>
-            <p className="text-sm text-gray-400">Return to the homepage</p>
+            <h3 className="mb-2 text-lg font-semibold text-white">Back to the Homepage</h3>
+            <p className="text-sm text-slate-light">Start again from the beginning</p>
           </Link>
 
-          <Link href="/insights" className="group p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-electric-cyan/50 transition-all duration-300 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-midnight-blue border border-white/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-electric-cyan transition-all">
-              <FileText className="w-6 h-6 text-electric-cyan" />
+          <Link href="/writing" className="group flex flex-col items-center rounded-md border border-white/10 bg-white/5 p-6 text-center transition-colors duration-300 hover:border-bronze-light/50 hover:bg-white/10">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-navy-soft transition-colors group-hover:border-bronze-light">
+              <FileText className="h-6 w-6 text-bronze-light" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Read the Notes</h3>
-            <p className="text-sm text-gray-400">Explore insights & articles</p>
+            <h3 className="mb-2 text-lg font-semibold text-white">Read the Writing</h3>
+            <p className="text-sm text-slate-light">Essays and perspectives</p>
           </Link>
 
-          <Link href="/services" className="group p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-electric-cyan/50 transition-all duration-300 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-midnight-blue border border-white/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-electric-cyan transition-all">
-              <Calendar className="w-6 h-6 text-electric-cyan" />
+          <Link href="/speaking" className="group flex flex-col items-center rounded-md border border-white/10 bg-white/5 p-6 text-center transition-colors duration-300 hover:border-bronze-light/50 hover:bg-white/10">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-navy-soft transition-colors group-hover:border-bronze-light">
+              <Calendar className="h-6 w-6 text-bronze-light" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Future Sessions</h3>
-            <p className="text-sm text-gray-400">View services & workshops</p>
+            <h3 className="mb-2 text-lg font-semibold text-white">Sessions &amp; Events</h3>
+            <p className="text-sm text-slate-light">Speaking and upcoming sessions</p>
           </Link>
 
-          <Link href="/contact" className="group p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-electric-cyan/50 transition-all duration-300 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full bg-midnight-blue border border-white/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-electric-cyan transition-all">
-              <Mail className="w-6 h-6 text-electric-cyan" />
+          <Link href="/contact" className="group flex flex-col items-center rounded-md border border-white/10 bg-white/5 p-6 text-center transition-colors duration-300 hover:border-bronze-light/50 hover:bg-white/10">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-navy-soft transition-colors group-hover:border-bronze-light">
+              <Mail className="h-6 w-6 text-bronze-light" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">Leave a Message</h3>
-            <p className="text-sm text-gray-400">Get in touch directly</p>
+            <h3 className="mb-2 text-lg font-semibold text-white">Leave a Message</h3>
+            <p className="text-sm text-slate-light">Get in touch directly</p>
           </Link>
         </motion.div>
 
@@ -283,8 +283,8 @@ export default function NotFound() {
           transition={{ duration: 1, delay: 2.5 }}
           className="mt-16"
         >
-          <Link href="/" className="inline-flex items-center text-gray-400 hover:text-white transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
+          <Link href="/" className="inline-flex items-center text-slate-light transition-colors hover:text-white">
+            <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true" />
             <span>Or just take me home</span>
           </Link>
         </motion.div>
