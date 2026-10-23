@@ -15,7 +15,7 @@ const ventures = [
 
 export default function MyWork() {
   return (
-    <section className="section bg-ivory">
+    <section className="section">
       <div className="shell">
         <div className="mb-14 max-w-2xl">
           <p className="type-eyebrow mb-5 text-bronze-ink">Ventures</p>

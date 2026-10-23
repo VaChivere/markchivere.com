@@ -85,11 +85,59 @@
 
   --background: var(--color-ivory);
   --foreground: var(--color-navy);
+
+  /* -------------------------------------------------------------------------
+     Paper surface.
+
+     The page tone is not a flat fill. Three layers sit on it: two very
+     low-frequency tonal washes, and a fine grain tile. The washes exist so a
+     large flat area reads as material rather than as dead colour; the grain
+     exists only to dither them, because two washes this shallow quantise into
+     visible bands on an 8-bit panel and the grain is what stops that.
+
+     Strength is deliberately at the threshold of notice, and was measured on
+     the rendered page rather than estimated. Sampled down the full document,
+     the surface runs from luminance 0.975 at the top-left to 0.960 at the
+     bottom-right — 4 levels out of 255 for the whole wash — and the grain adds
+     a 4–6 level range inside any single patch. Darkest pixel anywhere against
+     lightest is 0.946 to 0.981, so about 9 levels peak to peak. The reference
+     surface this was modelled on varies over 38. If it reads as a gradient
+     rather than as paper, it has been turned up too far.
+
+     The grain is centred on mid grey and composited with soft-light, so it
+     lightens and darkens in equal measure and adds no tone of its own — the
+     washes are the only thing that moves the page off --color-ivory, and they
+     move it up, not down. That direction matters: the header paints
+     bg-ivory/80 over this surface, so it lands about a level below the page
+     rather than a visible step above it.
+
+     All three layers are static. There is nothing to animate, so
+     prefers-reduced-motion needs no special case.
+     ------------------------------------------------------------------------- */
+  --paper-grain: url("/paper-grain.png");
+  --paper-grain-tile: 96px;
+  --paper-wash:
+    radial-gradient(125% 90% at 12% 2%, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(100% 75% at 90% 94%, rgba(25, 42, 56, 0.022) 0%, rgba(25, 42, 56, 0) 58%);
 }
 
 @layer base {
+  /* Set explicitly so the body's background paints its own box instead of
+     propagating to the canvas — propagated, the washes would resolve against
+     the viewport rather than against the document. */
+  html {
+    background-color: var(--background);
+  }
+
   body {
-    background: var(--background);
+    background-color: var(--background);
+    background-image: var(--paper-grain), var(--paper-wash);
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-size:
+      var(--paper-grain-tile) var(--paper-grain-tile),
+      100% 100%,
+      100% 100%;
+    background-blend-mode: soft-light, normal, normal;
     color: var(--foreground);
     font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;

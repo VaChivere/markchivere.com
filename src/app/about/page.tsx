@@ -61,7 +61,7 @@ const linkClassName =
 
 export default function AboutPage() {
   return (
-    <div className="bg-ivory">
+    <div>
       <JsonLd
         data={graph([
           profilePageSchema(),
@@ -73,7 +73,7 @@ export default function AboutPage() {
       />
 
       {/* Masthead */}
-      <section className="bg-ivory">
+      <section>
         <div className="shell pt-12 pb-16 md:pt-16 md:pb-20">
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
@@ -106,7 +106,7 @@ export default function AboutPage() {
       </section>
 
       {/* Professional journey */}
-      <section className="bg-ivory">
+      <section>
         <div className="shell pb-16 md:pb-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
@@ -182,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* Building Treamio */}
-      <section className="bg-ivory">
+      <section>
         <div className="shell section">
           <div className="max-w-[45rem]">
             <h2 className="type-h2 mb-7 text-navy">Building Treamio</h2>
@@ -216,7 +216,7 @@ export default function AboutPage() {
       </section>
 
       {/* Beyond consulting */}
-      <section className="bg-ivory">
+      <section>
         <div className="shell pb-16 md:pb-20">
           <div className="max-w-[45rem]">
             <h2 className="type-h2 mb-7 text-navy">Beyond Consulting</h2>

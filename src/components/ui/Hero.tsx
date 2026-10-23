@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative bg-ivory">
+    <section className="relative">
       <div className="shell pt-12 md:pt-16">
         {/* The portrait always carries a negative bottom margin, so it hangs past
             the foot of this section at every width. The divider band that follows
@@ -17,8 +17,6 @@ export default function Hero() {
               column so the negative margin on it actually pushes past the section
               foot rather than being absorbed by the grid row. */}
           <div className="lg:col-span-7">
-            <p className="type-eyebrow text-bronze-ink mb-6">Mark Chivere</p>
-
             <h1 className="type-display text-navy mb-7">
               The Human Side of{' '}
               <em className="font-editorial font-normal italic tracking-[-0.01em]">

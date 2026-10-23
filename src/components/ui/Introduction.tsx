@@ -3,10 +3,11 @@ import HanddrawnArrow from '@/components/playbook/HanddrawnArrow';
 
 export default function Introduction() {
   return (
-    // The divider band above carries the contrast, so this panel returns to the
-    // page tone and reads as the opening of the editorial body rather than as a
-    // second tinted surface.
-    <section className="section bg-ivory">
+    // This panel paints no surface of its own. The divider band above carries
+    // the contrast, and the ivory behind it is the page's paper surface, which
+    // is a single wash across the whole document — a panel that painted its own
+    // flat ivory here would cut a visible edge into it.
+    <section className="section">
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">

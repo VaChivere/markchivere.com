@@ -28,7 +28,7 @@ export default async function WritingPage() {
   const categories = categoriesPresent(articles);
 
   return (
-    <div className="bg-ivory">
+    <div>
       <JsonLd
         data={graph([
           breadcrumbSchema([
@@ -39,7 +39,7 @@ export default async function WritingPage() {
       />
 
       {/* Masthead */}
-      <section className="bg-ivory">
+      <section>
         <div className="shell pt-12 pb-14 md:pt-16 md:pb-20">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">

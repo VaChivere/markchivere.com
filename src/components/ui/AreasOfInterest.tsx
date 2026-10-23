@@ -25,7 +25,7 @@ const themes = [
 
 export default function AreasOfInterest() {
   return (
-    <section className="section bg-ivory">
+    <section className="section">
       <div className="shell">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-x-16 gap-y-8">
           <div className="max-w-2xl">
