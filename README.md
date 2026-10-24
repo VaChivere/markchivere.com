@@ -33,7 +33,7 @@ Set these in `.env.local` (development) and in the Vercel project settings
 | `NEXT_PUBLIC_HUBSPOT_NEWSLETTER_FORM_ID` | Yes | Newsletter signup form |
 | `NEXT_PUBLIC_HUBSPOT_WORKSHOP_FORM_ID` | No | Workshop enquiry form |
 | `NEXT_PUBLIC_HUBSPOT_SPEAKING_FORM_ID` | No | Dedicated speaking form; falls back to the contact form |
-| `NEXT_PUBLIC_HUBSPOT_MEETING_LINK` | No | Meeting scheduler; falls back to `https://meetings-eu1.hubspot.com/mchivere` |
+| `NEXT_PUBLIC_BOOKING_LINK` | No | Booking scheduler; falls back to `https://cal.com/mark-chivere-wdlgmm/20min` |
 | `NEXT_PUBLIC_SUBSTACK_PUBLICATION_URL` | No | Substack publication URL, e.g. `https://example.substack.com` |
 
 ### Substack

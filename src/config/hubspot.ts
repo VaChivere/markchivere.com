@@ -11,6 +11,12 @@ export const HUBSPOT_CONFIG = {
     speaking: process.env.NEXT_PUBLIC_HUBSPOT_SPEAKING_FORM_ID || '',
   },
   meetings: {
-    primary: process.env.NEXT_PUBLIC_HUBSPOT_MEETING_LINK || 'https://meetings-eu1.hubspot.com/mchivere',
+    /**
+     * Booking moved off HubSpot and onto cal.com, so the env var is named for
+     * the booking provider rather than for HubSpot. Leaving it HubSpot-named
+     * would have meant a variable called ...HUBSPOT_MEETING_LINK silently
+     * pointing the button at cal.com.
+     */
+    primary: process.env.NEXT_PUBLIC_BOOKING_LINK || 'https://cal.com/mark-chivere-wdlgmm/20min',
   },
 };
