@@ -29,7 +29,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-ivory">
       <div className="shell py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-12 md:gap-10">
+        <div className="grid gap-12 text-center md:grid-cols-12 md:gap-10 md:text-left">
           {/* Brand */}
           <div className="md:col-span-5">
             <Link href="/" className="inline-block">
@@ -44,7 +44,7 @@ export default function Footer() {
             <p className="type-meta mt-6 uppercase tracking-[0.14em] text-slate-light">
               Founder of Treamio | Consultant | Facilitator | Writer
             </p>
-            <p className="type-small mt-5 max-w-sm text-slate-light">
+            <p className="type-small mx-auto mt-5 max-w-sm text-slate-light md:mx-0">
               Writing and speaking at the intersection of leadership, behavioural science,
               organisational change and artificial intelligence.
             </p>
@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="type-meta mt-16 flex flex-col gap-3 border-t border-white/10 pt-8 text-slate-light md:flex-row md:items-center md:justify-between">
+        <div className="type-meta mt-16 flex flex-col items-center gap-3 border-t border-white/10 pt-8 text-center text-slate-light md:flex-row md:items-center md:justify-between md:text-left">
           <p>&copy; {currentYear} Mark Chivere. All rights reserved.</p>
           <p>The Human Side of Performance.</p>
         </div>
