@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import JsonLd from "@/components/seo/JsonLd";
 import TrackedLink from "@/components/analytics/TrackedLink";
 import Button from "@/components/ui/Button";
+import HumanChangeModel from "@/components/human-change/HumanChangeModel";
 import { absoluteUrl, breadcrumbSchema, DEFAULT_OG_IMAGE, graph } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -28,6 +30,7 @@ const ventures = [
     href: "https://treamio.com",
     linkLabel: "Visit Treamio",
     event: "treamio_referral_click",
+    logo: { src: "/treamio-logo.png", width: 1399, height: 299 },
   },
   {
     label: "Technology",
@@ -37,31 +40,9 @@ const ventures = [
     href: "https://grantshub.eu",
     linkLabel: "Visit GrantsHub",
     event: "grantshub_referral_click",
+    logo: { src: "/grantshub-logo.png", width: 605, height: 148 },
   },
 ] as const;
-
-const interests = [
-  {
-    title: "Leadership and behaviour",
-    description:
-      "What leaders do that actually shifts behaviour, and why good intentions so often fail to survive the working week.",
-  },
-  {
-    title: "Organisational learning",
-    description:
-      "How capability is genuinely built, and why most development stops at the end of the workshop.",
-  },
-  {
-    title: "AI and adoption",
-    description:
-      "The human factors behind technology change — the part that rarely makes it into the implementation plan.",
-  },
-  {
-    title: "Technology entrepreneurship",
-    description:
-      "Building products from the inside, and what that teaches you about how organisations really change.",
-  },
-];
 
 const linkClassName =
   "group inline-flex items-center gap-2 text-[0.9375rem] font-medium text-navy transition-colors hover:text-bronze-ink";
@@ -103,7 +84,20 @@ export default function MyWorkPage() {
                   <span className="type-eyebrow text-bronze-ink">{venture.label}</span>
                 </div>
                 <div className="lg:col-span-6">
-                  <h2 className="type-h3 mb-4 text-navy">{venture.name}</h2>
+                  {/* The h2 stays so the page outline still names each venture,
+                      but the name itself is the wordmark. The image carries the
+                      accessible name through alt, so the heading still announces
+                      as "Treamio" and "GrantsHub.eu". */}
+                  <h2 className="mb-4">
+                    <Image
+                      src={venture.logo.src}
+                      alt={venture.name}
+                      width={venture.logo.width}
+                      height={venture.logo.height}
+                      sizes="104px"
+                      className="h-[18px] w-auto sm:h-5 lg:h-[22px]"
+                    />
+                  </h2>
                   <p className="type-body text-slate">{venture.description}</p>
                 </div>
                 <div className="lg:col-span-3 lg:text-right">
@@ -127,29 +121,13 @@ export default function MyWorkPage() {
         </div>
       </section>
 
-      {/* Broader interests */}
-      <section className="section border-t border-gray-200 bg-gray-100">
-        <div className="shell">
-          <div className="mb-12 max-w-2xl">
-            <h2 className="type-h2 mb-4 text-navy">Where My Interests Sit</h2>
-            <p className="type-body text-slate">
-              Four threads that run through both ventures, and through most of what I write.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-x-12 gap-y-10 md:grid-cols-2">
-            {interests.map((item, index) => (
-              <div key={item.title} className="border-t border-gray-300 pt-6">
-                <span className="type-meta mb-4 block text-bronze-ink">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="type-h3 mb-3 text-navy">{item.title}</h3>
-                <p className="type-body text-slate">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Interests — the interactive diagram. Carries its own navy field and
+          heading block, so it replaces the previous static grid outright rather
+          than sitting inside `section.shell`. */}
+      <HumanChangeModel
+        heading="Where My Interests Sit"
+        lead="Four threads that run through both ventures, and through most of what I write. Technology entrepreneurship sits inside the technology area — building products from the inside teaches you a great deal about how organisations actually change."
+      />
 
       {/* CTA */}
       <section className="section border-t border-gray-200">
