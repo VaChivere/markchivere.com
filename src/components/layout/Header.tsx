@@ -10,7 +10,7 @@ import { HUBSPOT_CONFIG } from '@/config/hubspot';
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Writing', href: '/writing' },
+  { name: 'Insights', href: '/insights' },
   { name: 'Speaking', href: '/speaking' },
   { name: 'My Work', href: '/my-work' },
   { name: 'Contact', href: '/contact' },
@@ -75,21 +75,27 @@ export default function Header() {
         <Link href="/" className="relative z-50 shrink-0">
           <span className="hidden md:block">
             <Image
-              src="/logo-wide.png"
+              src="/logos/mark-chivere-horizontal-source-light.png"
               alt="Mark Chivere"
-              width={240}
-              height={48}
+              width={3454}
+              height={592}
+              sizes="240px"
               className="h-8 w-auto"
               priority
             />
           </span>
           <span className="md:hidden">
             <Image
-              src={isMenuOpen ? '/logo-mobile-white.png' : '/logo-stacked.png'}
+              src={
+                isMenuOpen
+                  ? '/logos/mark-chivere-horizontal-source-dark.png'
+                  : '/logos/mark-chivere-horizontal-source-light.png'
+              }
               alt="Mark Chivere"
-              width={140}
-              height={56}
-              className="h-10 w-auto"
+              width={3454}
+              height={592}
+              sizes="180px"
+              className="h-6 w-auto"
               priority
             />
           </span>

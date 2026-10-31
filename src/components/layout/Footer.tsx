@@ -6,7 +6,7 @@ import CookieSettingsButton from '@/components/ui/CookieSettingsButton';
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Writing', href: '/writing' },
+  { name: 'Insights', href: '/insights' },
   { name: 'Speaking', href: '/speaking' },
   { name: 'My Work', href: '/my-work' },
   { name: 'Contact', href: '/contact' },
@@ -34,11 +34,12 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Link href="/" className="inline-block">
               <Image
-                src="/logo-mobile-white.png"
+                src="/logos/mark-chivere-horizontal-source-dark.png"
                 alt="Mark Chivere"
-                width={140}
-                height={56}
-                className="h-10 w-auto"
+                width={3454}
+                height={592}
+                sizes="240px"
+                className="h-8 w-auto"
               />
             </Link>
             <p className="type-meta mt-6 uppercase tracking-[0.14em] text-slate-light">
